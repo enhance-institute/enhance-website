@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENHANCE Institute — Structural Integrity in Climate Finance</title>
+  <meta name="description" content="ENHANCE evaluates whether climate projects are structurally capable of producing the outcomes they claim." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="logo" href="index.html">
+      <img src="images/enhance-logo.png" alt="ENHANCE Institute" />
+    </a>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page">
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-eyebrow">ENHANCE Institute</div>
+          <h1>Structural Integrity<br /><em>Matters.</em></h1>
+          <p class="hero-sub">
+            We evaluate whether climate projects are structurally capable
+            of producing the outcomes they claim.
+            Not what was reported. Whether the architecture holds.
+          </p>
+          <div class="hero-actions">
+            <a href="research.html" class="btn-primary">View Research</a>
+            <a href="services.html" class="btn-secondary">Our Services</a>
+          </div>
+        </div>
+      </div>
+      <img class="hero-orca" src="images/orca-emblem.png" alt="" />
+    </section>
+
+    <!-- STATS -->
+    <section style="padding: 0 0 100px;">
+      <div class="container">
+        <div class="stats-row fade-in">
+          <div class="stat-block">
+            <div class="stat-number">101<span>+</span></div>
+            <div class="stat-label">Climate Projects Evaluated</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number"><span>90</span>.1%</div>
+            <div class="stat-label">Below Tier II Structural Integrity</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number">20</div>
+            <div class="stat-label">Binary Structural Conditions. No Exceptions.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCIPLES -->
+    <section class="alt">
+      <div class="container">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">A prior question.<br />A structural one.</h2>
+        <div class="divider"></div>
+        <p class="section-body">
+          Conventional evaluation asks: what did this project achieve?
+          ENHANCE asks the question that comes before that — was the documented
+          project architecture structurally capable of producing what it claimed?
+        </p>
+
+        <div class="principles fade-in">
+          <div class="principle accent">
+            <div class="principle-num">01</div>
+            <h3>Structural Diagnosis</h3>
+            <p>We evaluate the causal architecture of climate project design using deterministic, rule-based frameworks. No narrative. No discretion. Reproducible logic.</p>
+          </div>
+          <div class="principle">
+            <div class="principle-num">02</div>
+            <h3>Structural Design</h3>
+            <p>We redesign projects at the causal level — from input to impact — to ensure the architecture is internally coherent, scalable, and verifiable before capital is deployed.</p>
+          </div>
+          <div class="principle">
+            <div class="principle-num">03</div>
+            <h3>Independent Verification</h3>
+            <p>We operate without a stake in project outcomes. That independence is the foundation of our analytical authority.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAGLINE -->
+    <section>
+      <div class="container">
+        <div class="philosophy-block fade-in">
+          <blockquote>
+            "In climate systems, structure determines outcome.<br />
+            Everything else is noise."
+          </blockquote>
+          <cite>ENHANCE Institute — Structural Integrity Index 2026</cite>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            <img src="images/enhance-logo.png" alt="ENHANCE" />
+          </div>
+          <div class="footer-tagline">Enhancing the Systems that sustain our world</div>
+        </div>
+        <div class="footer-orca">
+          <img src="images/orca-emblem.png" alt="ENHANCE ORCA" />
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 ENHANCE Institute. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="research.html">Research</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

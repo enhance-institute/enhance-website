@@ -349,7 +349,7 @@ section.alt { background: var(--dark-alt); }
 
 .framework-name {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--teal);
   margin-bottom: 12px;

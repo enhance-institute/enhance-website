@@ -411,6 +411,18 @@ section.alt { background: var(--dark-alt); }
   text-align: right;
 }
 
+.service-price em {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-style: italic;
+  color: var(--teal);
+  white-space: normal;
+  max-width: 220px;
+  display: block;
+  text-align: right;
+  line-height: 1.6;
+}
+
 .service-note {
   font-family: var(--font-mono);
   font-size: 11px;

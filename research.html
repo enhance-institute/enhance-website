@@ -6,6 +6,58 @@
   <title>Research — ENHANCE Institute</title>
   <meta name="description" content="ENHANCE publishes structural benchmark reports and analytical frameworks for climate finance." />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── CLASSIFIED overlay system ─────────────────────────── */
+    .classified-wrapper {
+      position: relative;
+    }
+
+    .classified-blur {
+      filter: blur(5px);
+      pointer-events: none;
+      user-select: none;
+      opacity: 0.45;
+    }
+
+    .classified-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .classified-label {
+      font-family: var(--font-mono);
+      font-size: clamp(11px, 1.4vw, 14px);
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--black);
+      text-align: center;
+      line-height: 1;
+    }
+
+    .classified-rule {
+      width: 40px;
+      height: 1px;
+      background: var(--black);
+      opacity: 0.35;
+    }
+
+    /* Forthcoming grid cards get same treatment */
+    .forthcoming-card-wrapper {
+      position: relative;
+      background: var(--white);
+      padding: 40px 32px;
+    }
+
+    .forthcoming-card-wrapper .classified-overlay {
+      background: transparent;
+    }
+  </style>
 </head>
 <body>
 
@@ -45,95 +97,124 @@
       <div class="container">
 
         <!-- SII 2026 — PRIMARY REPORT -->
-        <div class="report-card fade-in">
-          <div>
-            <div class="report-tag">Benchmark Report · April 2026</div>
-            <div class="report-title">
-              Structural Integrity Index 2026<br />
-              <span style="font-size: 22px; font-weight: 400; font-style: italic; color: var(--gray-text);">
-                Evidence from 101 GGGI Projects and 4 Evaluation Reports
-              </span>
+        <div class="report-card fade-in classified-wrapper">
+          <div class="classified-blur">
+            <div>
+              <div class="report-tag">Benchmark Report · April 2026</div>
+              <div class="report-title">
+                Structural Integrity Index 2026<br />
+                <span style="font-size: 22px; font-weight: 400; font-style: italic; color: var(--gray-text);">
+                  Evidence from 101 GGGI Projects and 4 Evaluation Reports
+                </span>
+              </div>
+              <p class="report-meta">
+                A full structural evaluation of 101 publicly disclosed GGGI climate project documents
+                using the ToC:f(x)™ Canonical Framework — 20 binary structural conditions,
+                no discretionary weighting, no probabilistic AI judgement.
+              </p>
+              <p class="report-meta">
+                <strong style="color: var(--black);">Key finding:</strong>
+                No project reached Tier I or Tier II structural integrity.
+                90.1% fell within Tier IV or Tier V.
+                Portfolio mean score: 0.41 out of 1.00.
+              </p>
+              <div style="display: flex; gap: 24px; margin-top: 8px; flex-wrap: wrap;">
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--gray-text);">n = 101 projects + 4 evaluation reports</span>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--gray-text);">Framework: ToC:f(x)™ v2.0</span>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--gray-text);">46 pages</span>
+              </div>
             </div>
-            <p class="report-meta">
-              A full structural evaluation of 101 publicly disclosed GGGI climate project documents
-              using the ToC:f(x)™ Canonical Framework — 20 binary structural conditions,
-              no discretionary weighting, no probabilistic AI judgement.
-            </p>
-            <p class="report-meta">
-              <strong style="color: var(--black);">Key finding:</strong>
-              No project reached Tier I or Tier II structural integrity.
-              90.1% fell within Tier IV or Tier V.
-              Portfolio mean score: 0.41 out of 1.00.
-            </p>
-            <div style="display: flex; gap: 24px; margin-top: 8px; flex-wrap: wrap;">
-              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--gray-text);">n = 101 projects + 4 evaluation reports</span>
-              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--gray-text);">Framework: ToC:f(x)™ v2.0</span>
-              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--gray-text);">46 pages</span>
-            </div>
+            <div class="report-action" id="sii-action"></div>
           </div>
-          <div class="report-action" id="sii-action">
-            <!-- Button state controlled by date logic below -->
+          <div class="classified-overlay">
+            <div class="classified-rule"></div>
+            <div class="classified-label">CLASSIFIED UNTIL RELEASE</div>
+            <div class="classified-rule"></div>
           </div>
         </div>
 
         <!-- CASE ANALYSIS -->
-        <div class="report-card fade-in">
-          <div>
-            <div class="report-tag">Case Analysis · April 2026</div>
-            <div class="report-title">
-              Six Projects, Three Continents, One Pattern
-              <span style="display: block; font-size: 22px; font-weight: 400; font-style: italic; color: var(--gray-text); margin-top: 4px;">
-                Analysis of the Lowest-Scoring Entries in the GGGI SII 2026
-              </span>
+        <div class="report-card fade-in classified-wrapper">
+          <div class="classified-blur">
+            <div>
+              <div class="report-tag">Case Analysis · April 2026</div>
+              <div class="report-title">
+                Six Projects, Three Continents, One Pattern
+                <span style="display: block; font-size: 22px; font-weight: 400; font-style: italic; color: var(--gray-text); margin-top: 4px;">
+                  Analysis of the Lowest-Scoring Entries in the GGGI SII 2026
+                </span>
+              </div>
+              <p class="report-meta">
+                A companion analytical release examining the six projects that scored below 0.30
+                in the Structural Integrity Index 2026. Three continents. Four countries.
+                Four distinct thematic areas. One shared structural failure.
+              </p>
+              <p class="report-meta">
+                <strong style="color: var(--black);">Key finding:</strong>
+                In each case, the project's terminal output does not directly remove
+                the core constraint it was designed to address.
+                Framework substitution. Advisory displacement. Training as terminal output.
+              </p>
+              <div style="display: flex; gap: 24px; margin-top: 8px; flex-wrap: wrap;">
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--gray-text);">n = 6 cases</span>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--gray-text);">KH34 · GGPI11 · KH26 · KH33 · IN34 · ROC02</span>
+              </div>
             </div>
-            <p class="report-meta">
-              A companion analytical release examining the six projects that scored below 0.30
-              in the Structural Integrity Index 2026. Three continents. Four countries.
-              Four distinct thematic areas. One shared structural failure.
-            </p>
-            <p class="report-meta">
-              <strong style="color: var(--black);">Key finding:</strong>
-              In each case, the project's terminal output does not directly remove
-              the core constraint it was designed to address.
-              Framework substitution. Advisory displacement. Training as terminal output.
-            </p>
-            <div style="display: flex; gap: 24px; margin-top: 8px; flex-wrap: wrap;">
-              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--gray-text);">n = 6 cases</span>
-              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--gray-text);">KH34 · GGPI11 · KH26 · KH33 · IN34 · ROC02</span>
-            </div>
+            <div class="report-action" id="case-action"></div>
           </div>
-          <div class="report-action" id="case-action">
-            <!-- Button state controlled by date logic below -->
+          <div class="classified-overlay">
+            <div class="classified-rule"></div>
+            <div class="classified-label">CLASSIFIED UNTIL RELEASE</div>
+            <div class="classified-rule"></div>
           </div>
         </div>
 
         <!-- FORTHCOMING -->
         <div style="margin-top: 64px;">
           <div class="section-label">Forthcoming</div>
-          <h2 class="section-title" style="font-size: 28px; margin-bottom: 32px;">The series continues.</h2>
+          <h2 class="section-title" style="font-size: 28px; margin-bottom: 32px;">The work continues.</h2>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--gray-mid); border: 1px solid var(--gray-mid);">
-            <div style="background: var(--white); padding: 40px 32px;">
-              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--teal); margin-bottom: 12px; letter-spacing: 0.1em;">Phase 2 · 2026</div>
-              <div style="font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--black); margin-bottom: 12px; line-height: 1.3;">
-                GCF Portfolio: VERA™ + C-FAIR™ Benchmark
+
+            <!-- Phase 2 -->
+            <div class="forthcoming-card-wrapper classified-wrapper">
+              <div class="classified-blur">
+                <div style="font-family: var(--font-mono); font-size: 11px; color: var(--teal); margin-bottom: 12px; letter-spacing: 0.1em;">Phase 2 · 2026</div>
+                <div style="font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--black); margin-bottom: 12px; line-height: 1.3;">
+                  GCF Portfolio: VERA™ + C-FAIR™ Benchmark
+                </div>
+                <p style="font-size: 13px; color: var(--gray-text); line-height: 1.8;">
+                  Structural misclassification and misallocation in GCF-approved climate projects.
+                  18 cases. 3 continents. Mitigation vs Adaptation. The classification is wrong.
+                  The money followed.
+                </p>
               </div>
-              <p style="font-size: 13px; color: var(--gray-text); line-height: 1.8;">
-                Structural misclassification and misallocation in GCF-approved climate projects.
-                18 cases. 3 continents. Mitigation vs Adaptation. The classification is wrong.
-                The money followed.
-              </p>
-            </div>
-            <div style="background: var(--white); padding: 40px 32px;">
-              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--teal); margin-bottom: 12px; letter-spacing: 0.1em;">Phase 3 · 2026</div>
-              <div style="font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--black); margin-bottom: 12px; line-height: 1.3;">
-                Carbon Budget at Risk: GCF Portfolio Assessment
+              <div class="classified-overlay">
+                <div class="classified-rule"></div>
+                <div class="classified-label">CLASSIFIED UNTIL RELEASE</div>
+                <div class="classified-rule"></div>
               </div>
-              <p style="font-size: 13px; color: var(--gray-text); line-height: 1.8;">
-                VORTA™ + CBaR™ framework applied to GCF's completed and interim portfolio.
-                The question: is GCF's portfolio structurally aligned with the Carbon Budget?
-              </p>
             </div>
+
+            <!-- Phase 3 -->
+            <div class="forthcoming-card-wrapper classified-wrapper">
+              <div class="classified-blur">
+                <div style="font-family: var(--font-mono); font-size: 11px; color: var(--teal); margin-bottom: 12px; letter-spacing: 0.1em;">Phase 3 · 2026</div>
+                <div style="font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--black); margin-bottom: 12px; line-height: 1.3;">
+                  Carbon Budget at Risk: GCF Portfolio Assessment
+                </div>
+                <p style="font-size: 13px; color: var(--gray-text); line-height: 1.8;">
+                  VORTA™ + CBaR™ framework applied to GCF's completed and interim portfolio.
+                  The question: is GCF's portfolio structurally aligned with the Carbon Budget?
+                </p>
+              </div>
+              <div class="classified-overlay">
+                <div class="classified-rule"></div>
+                <div class="classified-label">CLASSIFIED UNTIL RELEASE</div>
+                <div class="classified-rule"></div>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -187,32 +268,32 @@
 
   <script>
     // ── Date-based button logic ──────────────────────────────
-    // Replace REPORT_URL and CASE_URL with actual PDF links on April 7
     const REPORT_URL = '#'; // TODO: replace with actual PDF URL on April 7
     const CASE_URL   = '#'; // TODO: replace with actual PDF URL on April 15
 
-    const now        = new Date();
-    const april7     = new Date('2026-04-07T08:00:00Z'); // UTC = KST 17:00
-    const april15    = new Date('2026-04-15T08:00:00Z');
+    const now     = new Date();
+    const april7  = new Date('2026-04-07T08:00:00Z'); // UTC = KST 17:00
+    const april15 = new Date('2026-04-15T08:00:00Z');
 
-    const siiAction  = document.getElementById('sii-action');
-    const caseAction = document.getElementById('case-action');
-
+    // On release dates, remove blur and show download buttons
     if (now >= april7) {
-      siiAction.innerHTML = `<a href="${REPORT_URL}" class="btn-download" download>Download PDF</a>`;
-    } else {
-      siiAction.innerHTML = `
-        <div class="btn-coming">Coming April 7</div>
-        <p style="font-family:var(--font-mono);font-size:10px;color:var(--gray-text);margin-top:12px;text-align:center;letter-spacing:0.08em;">
-          FREE · PUBLIC RELEASE
-        </p>`;
+      const siiCard = document.querySelector('.report-card.classified-wrapper');
+      if (siiCard) {
+        siiCard.querySelector('.classified-blur').classList.remove('classified-blur');
+        siiCard.querySelector('.classified-overlay').remove();
+        document.getElementById('sii-action').innerHTML =
+          `<a href="${REPORT_URL}" class="btn-download" download>Download PDF</a>`;
+      }
     }
 
     if (now >= april15) {
-      caseAction.innerHTML = `<a href="${CASE_URL}" class="btn-download" download>Download PDF</a>`;
-    } else {
-      caseAction.innerHTML = `
-        <div class="btn-coming">Coming April 15</div>`;
+      const caseCard = document.querySelectorAll('.report-card.classified-wrapper')[1];
+      if (caseCard) {
+        caseCard.querySelector('.classified-blur').classList.remove('classified-blur');
+        caseCard.querySelector('.classified-overlay').remove();
+        document.getElementById('case-action').innerHTML =
+          `<a href="${CASE_URL}" class="btn-download" download>Download PDF</a>`;
+      }
     }
 
     // ── Fade-in ──────────────────────────────────────────────

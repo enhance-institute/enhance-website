@@ -7,58 +7,21 @@
   <meta name="description" content="ENHANCE publishes structural benchmark reports and analytical frameworks for climate finance." />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── CLASSIFIED overlay system ─────────────────────────── */
-    .classified-wrapper {
-      position: relative;
-    }
-
-    .classified-blur {
-      filter: blur(5px);
-      pointer-events: none;
-      user-select: none;
-      opacity: 0.45;
-    }
-
+    .classified-wrapper { position: relative; }
+    .classified-blur { filter: blur(5px); pointer-events: none; user-select: none; opacity: 0.45; }
     .classified-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      z-index: 10;
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 10px; z-index: 10;
     }
-
     .classified-label {
-      font-family: var(--font-mono);
-      font-size: clamp(11px, 1.4vw, 14px);
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      color: var(--black);
-      text-align: center;
-      line-height: 1;
+      font-family: var(--font-mono); font-size: clamp(11px, 1.4vw, 14px);
+      font-weight: 700; letter-spacing: 0.22em; color: var(--black);
+      text-align: center; line-height: 1;
     }
-
-    .classified-rule {
-      width: 40px;
-      height: 1px;
-      background: var(--black);
-      opacity: 0.35;
-    }
-
-    /* Forthcoming grid cards get same treatment */
-    .forthcoming-card-wrapper {
-      position: relative;
-      background: var(--white);
-      padding: 40px 32px;
-    }
-
-    .forthcoming-card-wrapper .classified-overlay {
-      background: transparent;
-    }
+    .classified-rule { width: 40px; height: 1px; background: var(--black); opacity: 0.35; }
+    .forthcoming-card-wrapper { position: relative; background: var(--white); padding: 40px 32px; }
+    .forthcoming-card-wrapper .classified-overlay { background: transparent; }
   </style>
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YBL56DNXZE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -83,13 +46,10 @@
 
   <div class="page">
 
-    <!-- PAGE HEADER -->
     <section style="padding: 80px 0 0;">
       <div class="container">
         <div class="section-label">Research</div>
-        <h1 class="section-title">
-          Evidence from the<br />public record.
-        </h1>
+        <h1 class="section-title">Evidence from the<br />public record.</h1>
         <div class="divider"></div>
         <p class="section-body">
           ENHANCE publishes structural benchmark reports, case analyses,
@@ -100,7 +60,6 @@
       </div>
     </section>
 
-    <!-- REPORTS -->
     <section>
       <div class="container">
 
@@ -141,39 +100,34 @@
           </div>
         </div>
 
-        <!-- CASE ANALYSIS -->
-        <div class="report-card fade-in classified-wrapper">
-          <div class="classified-blur">
-            <div>
-              <div class="report-tag">Case Analysis · April 2026</div>
-              <div class="report-title">
-                Six Projects, Three Continents, One Pattern
-                <span style="display: block; font-size: 22px; font-weight: 400; font-style: italic; color: var(--gray-text); margin-top: 4px;">
-                  Analysis of the Lowest-Scoring Entries in the GGGI SII 2026
-                </span>
-              </div>
-              <p class="report-meta">
-                A companion analytical release examining the six projects that scored below 0.30
-                in the Structural Integrity Index 2026. Three continents. Four countries.
-                Four distinct thematic areas. One shared structural failure.
-              </p>
-              <p class="report-meta">
-                <strong style="color: var(--black);">Key finding:</strong>
-                In each case, the project's terminal output does not directly remove
-                the core constraint it was designed to address.
-                Framework substitution. Advisory displacement. Training as terminal output.
-              </p>
-              <div style="display: flex; gap: 24px; margin-top: 8px; flex-wrap: wrap;">
-                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--gray-text);">n = 6 cases</span>
-                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--gray-text);">KH34 · GGPI11 · KH26 · KH33 · IN34 · ROC02</span>
-              </div>
+        <!-- CASE ANALYSIS — RELEASED APRIL 15 (no blur) -->
+        <div class="report-card fade-in">
+          <div>
+            <div class="report-tag">Case Analysis · April 2026</div>
+            <div class="report-title">
+              Six Projects, Three Continents, One Pattern
+              <span style="display: block; font-size: 22px; font-weight: 400; font-style: italic; color: var(--gray-text); margin-top: 4px;">
+                Analysis of the Lowest-Scoring Entries in the GGGI SII 2026
+              </span>
             </div>
-            <div class="report-action" id="case-action"></div>
+            <p class="report-meta">
+              A companion analytical release examining the six projects that scored below 0.30
+              in the Structural Integrity Index 2026. Three continents. Four countries.
+              Four distinct thematic areas. One shared structural failure.
+            </p>
+            <p class="report-meta">
+              <strong style="color: var(--black);">Key finding:</strong>
+              In each case, the project's terminal output does not directly remove
+              the core constraint it was designed to address.
+              Framework substitution. Advisory displacement. Training as terminal output.
+            </p>
+            <div style="display: flex; gap: 24px; margin-top: 8px; flex-wrap: wrap;">
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--gray-text);">n = 6 cases</span>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--gray-text);">KH34 · GGPI11 · KH26 · KH33 · IN34 · ROC02</span>
+            </div>
           </div>
-          <div class="classified-overlay">
-            <div class="classified-rule"></div>
-            <div class="classified-label">CLASSIFIED UNTIL RELEASE</div>
-            <div class="classified-rule"></div>
+          <div class="report-action">
+            <a href="Six_Projects.pdf" class="btn-download" download>Download PDF</a>
           </div>
         </div>
 
@@ -184,7 +138,6 @@
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--gray-mid); border: 1px solid var(--gray-mid);">
 
-            <!-- Phase 2 -->
             <div class="forthcoming-card-wrapper classified-wrapper">
               <div class="classified-blur">
                 <div style="font-family: var(--font-mono); font-size: 11px; color: var(--teal); margin-bottom: 12px; letter-spacing: 0.1em;">Phase 2 · 2026</div>
@@ -204,7 +157,6 @@
               </div>
             </div>
 
-            <!-- Phase 3 -->
             <div class="forthcoming-card-wrapper classified-wrapper">
               <div class="classified-blur">
                 <div style="font-family: var(--font-mono); font-size: 11px; color: var(--teal); margin-bottom: 12px; letter-spacing: 0.1em;">Phase 3 · 2026</div>
@@ -229,7 +181,6 @@
       </div>
     </section>
 
-    <!-- METHODOLOGY NOTE -->
     <section class="alt">
       <div class="container">
         <div class="section-label">Methodology</div>
@@ -275,15 +226,10 @@
   </footer>
 
   <script>
-    // ── Date-based button logic ──────────────────────────────
-    const REPORT_URL = 'ENHANCE_Structural_Integrity_Index_2026.pdf'; // TODO: replace with actual PDF URL on April 7
-    const CASE_URL   = '#'; // TODO: replace with actual PDF URL on April 15
+    const REPORT_URL = 'ENHANCE_Structural_Integrity_Index_2026.pdf';
+    const now    = new Date();
+    const april7 = new Date('2026-04-07T08:00:00Z');
 
-    const now     = new Date();
-    const april7  = new Date('2026-04-07T08:00:00Z'); // UTC = KST 17:00
-    const april15 = new Date('2026-04-15T08:00:00Z');
-
-    // On release dates, remove blur and show download buttons
     if (now >= april7) {
       const siiCard = document.querySelector('.report-card.classified-wrapper');
       if (siiCard) {
@@ -294,17 +240,6 @@
       }
     }
 
-    if (now >= april15) {
-      const caseCard = document.querySelectorAll('.report-card.classified-wrapper')[1];
-      if (caseCard) {
-        caseCard.querySelector('.classified-blur').classList.remove('classified-blur');
-        caseCard.querySelector('.classified-overlay').remove();
-        document.getElementById('case-action').innerHTML =
-          `<a href="${CASE_URL}" class="btn-download" download>Download PDF</a>`;
-      }
-    }
-
-    // ── Fade-in ──────────────────────────────────────────────
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.15 });

@@ -106,7 +106,6 @@
       border-left: 2px solid rgba(0,150,156,0.25);
       padding: 32px 40px;
       margin-bottom: 2px;
-      opacity: 0.6;
       position: relative;
     }
     .forthcoming-label {
@@ -136,6 +135,18 @@
       letter-spacing: 0.1em;
       margin-top: 12px;
     }
+    .classified-wrapper { position: relative; }
+    .classified-blur { filter: blur(5px); pointer-events: none; user-select: none; opacity: 0.45; }
+    .classified-overlay {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 10px; z-index: 10;
+    }
+    .classified-label {
+      font-family: var(--font-mono); font-size: clamp(11px, 1.4vw, 14px);
+      font-weight: 700; letter-spacing: 0.22em; color: var(--black);
+      text-align: center; line-height: 1;
+    }
+    .classified-rule { width: 40px; height: 1px; background: var(--black); opacity: 0.35; }
   </style>
 </head>
 <body>
@@ -234,32 +245,60 @@
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--gray-mid); border: 1px solid var(--gray-mid);">
 
-            <div class="project-card-forthcoming">
-              <div class="forthcoming-label">Project Design No.002</div>
-              <div class="forthcoming-title">Elōra-X™</div>
-              <div class="forthcoming-sub">Land-based Resilience Series #1 · NbS Structural Design</div>
-              <div class="forthcoming-date">May 20, 2026 · World Bee Day</div>
+            <div class="project-card-forthcoming classified-wrapper">
+              <div class="classified-blur">
+                <div class="forthcoming-label">Project Design No.002</div>
+                <div class="forthcoming-title">Elōra-X™</div>
+                <div class="forthcoming-sub">Land-based Resilience Series #1 · NbS Structural Design</div>
+                <div class="forthcoming-date">May 20, 2026 · World Bee Day</div>
+              </div>
+              <div class="classified-overlay">
+                <div class="classified-rule"></div>
+                <div class="classified-label">CLASSIFIED UNTIL RELEASE</div>
+                <div class="classified-rule"></div>
+              </div>
             </div>
 
-            <div class="project-card-forthcoming">
-              <div class="forthcoming-label">Project Design No.003</div>
-              <div class="forthcoming-title">Turtle-LbS™</div>
-              <div class="forthcoming-sub">Marine Resilience Series #1 · Scope 3 Attribution Design</div>
-              <div class="forthcoming-date">May 23, 2026 · World Turtle Day</div>
+            <div class="project-card-forthcoming classified-wrapper">
+              <div class="classified-blur">
+                <div class="forthcoming-label">Project Design No.003</div>
+                <div class="forthcoming-title">Turtle-LbS™</div>
+                <div class="forthcoming-sub">Marine Resilience Series #1 · Scope 3 Attribution Design</div>
+                <div class="forthcoming-date">May 23, 2026 · World Turtle Day</div>
+              </div>
+              <div class="classified-overlay">
+                <div class="classified-rule"></div>
+                <div class="classified-label">CLASSIFIED UNTIL RELEASE</div>
+                <div class="classified-rule"></div>
+              </div>
             </div>
 
-            <div class="project-card-forthcoming">
-              <div class="forthcoming-label">Project Design No.004</div>
-              <div class="forthcoming-title">AquaPillar-X™</div>
-              <div class="forthcoming-sub">Final Project Design in the 2026 Series</div>
-              <div class="forthcoming-date">June 1, 2026 · World Reef Day</div>
+            <div class="project-card-forthcoming classified-wrapper">
+              <div class="classified-blur">
+                <div class="forthcoming-label">Project Design No.004</div>
+                <div class="forthcoming-title">AquaPillar-X™</div>
+                <div class="forthcoming-sub">Final Project Design in the 2026 Series</div>
+                <div class="forthcoming-date">June 1, 2026 · World Reef Day</div>
+              </div>
+              <div class="classified-overlay">
+                <div class="classified-rule"></div>
+                <div class="classified-label">CLASSIFIED UNTIL RELEASE</div>
+                <div class="classified-rule"></div>
+              </div>
             </div>
 
-            <div class="project-card-forthcoming">
-              <div class="forthcoming-label">Project Design No.005</div>
-              <div class="forthcoming-title">BluePulse-X™</div>
-              <div class="forthcoming-sub">Fisheries MRV · GHG Monitoring · SIDS/LDC</div>
-              <div class="forthcoming-date">November 21, 2026 · World Fisheries Day</div>
+            <div class="project-card-forthcoming classified-wrapper">
+              <div class="classified-blur">
+                <div class="forthcoming-label">Project Design No.005</div>
+                <div class="forthcoming-title">BluePulse-X™</div>
+                <div class="forthcoming-sub">Fisheries MRV · GHG Monitoring · SIDS/LDC</div>
+                <div class="forthcoming-date">November 21, 2026 · World Fisheries Day</div>
+              </div>
+              <div class="classified-overlay">
+                <div class="classified-rule"></div>
+                <div class="classified-label">CLASSIFIED UNTIL RELEASE</div>
+                <div class="classified-rule"></div>
+              </div>
             </div>
 
           </div>

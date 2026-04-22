@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — ENHANCE Institute</title>
+  <meta name="description" content="ENHANCE Project Architecture Series. Deterministic design packages for climate-aligned infrastructure." />
+  <link rel="stylesheet" href="style.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YBL56DNXZE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YBL56DNXZE');
+  </script>
+  <style>
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--gray-mid);
+      border-left: 2px solid #00969C;
+      padding: 40px 40px 36px;
+      margin-bottom: 2px;
+      transition: border-left-color 0.2s;
+    }
+    .project-card:hover {
+      border-left-color: #00969C;
+    }
+    .project-number {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #00969C;
+      margin-bottom: 6px;
+    }
+    .project-title {
+      font-family: var(--font-serif);
+      font-size: clamp(22px, 2.5vw, 30px);
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .project-subtitle {
+      font-size: 15px;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--gray-text);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .project-meta {
+      font-size: 14px;
+      color: var(--gray-text);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .project-result {
+      display: inline-flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 16px 0 20px;
+      padding: 14px 20px;
+      background: rgba(0,150,156,0.05);
+      border: 0.5px solid rgba(0,150,156,0.25);
+      border-radius: 2px;
+    }
+    .project-result-item {
+      text-align: center;
+    }
+    .project-result-value {
+      font-family: var(--font-mono);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .project-result-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-text);
+    }
+    .project-tags {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .project-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: var(--gray-text);
+    }
+    .project-action {
+      margin-top: 28px;
+    }
+
+    /* Forthcoming card */
+    .project-card-forthcoming {
+      background: var(--white);
+      border: 1px solid var(--gray-mid);
+      border-left: 2px solid rgba(0,150,156,0.25);
+      padding: 32px 40px;
+      margin-bottom: 2px;
+      opacity: 0.6;
+      position: relative;
+    }
+    .forthcoming-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray-text);
+      margin-bottom: 8px;
+    }
+    .forthcoming-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .forthcoming-sub {
+      font-size: 13px;
+      color: var(--gray-text);
+      font-style: italic;
+    }
+    .forthcoming-date {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #00969C;
+      letter-spacing: 0.1em;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="index.html">
+      <img src="images/enhance-logo-w.png" alt="ENHANCE Institute" />
+    </a>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pathfinder.html">PathFinder-GOV™</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <section style="padding: 80px 0 0;">
+      <div class="container">
+        <div class="section-label">Project Architecture Series</div>
+        <h1 class="section-title">Design before<br /><em>deployment.</em></h1>
+        <div class="divider"></div>
+        <p class="section-body">
+          ENHANCE designs climate-aligned infrastructure systems from first principles.
+          Each project package discloses the public design architecture — evaluated through
+          the same structural frameworks applied to international development portfolios.
+          The structure is complete before the institution is named.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECT CARDS -->
+    <section>
+      <div class="container">
+
+        <!-- JFT™ — No.001 -->
+        <div class="project-card fade-in">
+          <div class="project-number">Project Design No.001 · Released April 22, 2026</div>
+          <div class="project-title">Just Food Transition™ (JFT™)</div>
+          <div class="project-subtitle">
+            Climate-Aligned Reserve Food Infrastructure for Methane Reduction,
+            Nutrition Security, and Strategic Resilience
+          </div>
+
+          <p class="project-meta">
+            JFT™ converts underutilised biological resources — animal by-products and surplus food
+            — into climate-aligned nutrition reserves. Through two integrated conversion modules,
+            OssiMeal™ and OFCS™, the platform transforms what is discarded into what sustains.
+            This is not food aid. It is reserve infrastructure.
+          </p>
+
+          <p class="project-meta">
+            Evaluated using the ToC:f(x)™ Canonical Framework against the same 20 binary structural
+            conditions applied to 101 GGGI projects in the SII 2026 benchmark.
+          </p>
+
+          <div class="project-result">
+            <div class="project-result-item">
+              <div class="project-result-value">0.800</div>
+              <div class="project-result-label">Structural Score</div>
+            </div>
+            <div class="project-result-item">
+              <div class="project-result-value">Tier II</div>
+              <div class="project-result-label">Structural Tier</div>
+            </div>
+            <div class="project-result-item">
+              <div class="project-result-value">CONDITIONAL</div>
+              <div class="project-result-label">Final Verdict</div>
+            </div>
+            <div class="project-result-item">
+              <div class="project-result-value">#1</div>
+              <div class="project-result-label">vs. 101 GGGI Projects</div>
+            </div>
+          </div>
+
+          <div class="project-tags">
+            <span class="project-tag">Modules: OssiMeal™ · OFCS™</span>
+            <span class="project-tag">Framework: ToC:f(x)™ · VERA™ · C-FAIR™ · VORTA™</span>
+            <span class="project-tag">ENHANCE Design Package No.001</span>
+            <span class="project-tag">67 pages</span>
+          </div>
+
+          <div class="project-action">
+            <a href="JFT_Design_Package.pdf" class="btn-download" download>Download PDF</a>
+          </div>
+        </div>
+
+        <!-- FORTHCOMING PROJECTS -->
+        <div style="margin-top: 64px;">
+          <div class="section-label">Forthcoming</div>
+          <h2 class="section-title" style="font-size: 28px; margin-bottom: 32px;">The arc continues.</h2>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--gray-mid); border: 1px solid var(--gray-mid);">
+
+            <div class="project-card-forthcoming">
+              <div class="forthcoming-label">Project Design No.002</div>
+              <div class="forthcoming-title">Elōra-X™</div>
+              <div class="forthcoming-sub">Land-based Resilience Series #1 · NbS Structural Design</div>
+              <div class="forthcoming-date">May 20, 2026 · World Bee Day</div>
+            </div>
+
+            <div class="project-card-forthcoming">
+              <div class="forthcoming-label">Project Design No.003</div>
+              <div class="forthcoming-title">Turtle-LbS™</div>
+              <div class="forthcoming-sub">Marine Resilience Series #1 · Scope 3 Attribution Design</div>
+              <div class="forthcoming-date">May 23, 2026 · World Turtle Day</div>
+            </div>
+
+            <div class="project-card-forthcoming">
+              <div class="forthcoming-label">Project Design No.004</div>
+              <div class="forthcoming-title">AquaPillar-X™</div>
+              <div class="forthcoming-sub">Final Project Design in the 2026 Series</div>
+              <div class="forthcoming-date">June 1, 2026 · World Reef Day</div>
+            </div>
+
+            <div class="project-card-forthcoming">
+              <div class="forthcoming-label">Project Design No.005</div>
+              <div class="forthcoming-title">BluePulse-X™</div>
+              <div class="forthcoming-sub">Fisheries MRV · GHG Monitoring · SIDS/LDC</div>
+              <div class="forthcoming-date">November 21, 2026 · World Fisheries Day</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DESIGN PHILOSOPHY -->
+    <section class="alt">
+      <div class="container">
+        <div class="section-label">Design Philosophy</div>
+        <h2 class="section-title">Structure determines outcome.<br /><em>Design determines survival.</em></h2>
+        <div class="divider"></div>
+        <p class="section-body" style="margin-bottom: 32px;">
+          Every ENHANCE project design is evaluated through the same structural framework
+          applied to international development portfolios. A project that cannot pass its own
+          evaluation was not ready to be designed. We evaluate before we publish.
+        </p>
+        <div class="philosophy-block" style="max-width: 720px;">
+          <blockquote style="font-size: clamp(16px, 1.8vw, 22px);">
+            "We are not presenting a proposal in search of funding.
+            We are presenting a structure that is already complete —
+            waiting for the institution, government, or coalition
+            willing to activate it."
+          </blockquote>
+          <cite>JFT™ Design Package No.001 — April 22, 2026</cite>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            <img src="images/enhance-logo-w.png" alt="ENHANCE" />
+          </div>
+          <div class="footer-tagline">Enhancing the Systems that sustain our world</div>
+        </div>
+        <div class="footer-orca">
+          <img src="images/orca-emblem.png" alt="ENHANCE ORCA" />
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 ENHANCE Institute. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="pathfinder.html">PathFinder-GOV™</a>
+          <a href="research.html">Research</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

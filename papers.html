@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Papers — ENHANCE Institute</title>
+  <meta name="description" content="ENHANCE Institute publishes its theoretical and methodological foundations on SSRN. The papers are the architecture. The reports are the evidence." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ── LAYER HEADER ─────────────────────────────────────── */
+    .layer-header {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      margin: 72px 0 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(232,232,232,0.10);
+    }
+    .layer-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: #00969C;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .layer-title {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.10em;
+      color: rgba(232,232,232,0.50);
+      text-transform: uppercase;
+    }
+    .layer-desc {
+      font-size: 13px;
+      color: rgba(232,232,232,0.40);
+      line-height: 1.6;
+      margin-top: 6px;
+      max-width: 560px;
+    }
+
+    /* ── PAPER CARDS ──────────────────────────────────────── */
+    .papers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(232,232,232,0.08);
+    }
+    @media (max-width: 720px) {
+      .papers-grid { grid-template-columns: 1fr; }
+    }
+
+    .paper-card {
+      background: #111;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+    .paper-card:hover {
+      background: #161616;
+    }
+    .paper-card-single {
+      grid-column: 1 / -1;
+    }
+
+    .paper-date {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: rgba(0,150,156,0.70);
+      text-transform: uppercase;
+    }
+    .paper-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: rgba(232,232,232,0.90);
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+    }
+    .paper-hook {
+      font-size: 12.5px;
+      color: rgba(232,232,232,0.45);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .paper-ssrn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.10em;
+      color: #00969C;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-top: 4px;
+      transition: opacity 0.15s;
+    }
+    .paper-ssrn:hover { opacity: 0.7; }
+    .paper-ssrn svg {
+      width: 10px; height: 10px;
+      stroke: currentColor; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    /* ── ARCHITECTURE FLOW ────────────────────────────────── */
+    .flow-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(232,232,232,0.08);
+      margin-top: 16px;
+    }
+    @media (max-width: 680px) {
+      .flow-row { grid-template-columns: 1fr 1fr; }
+    }
+    .flow-block {
+      background: #111;
+      padding: 28px 24px;
+      text-decoration: none;
+      transition: background 0.2s;
+      position: relative;
+    }
+    .flow-block:hover { background: #161616; }
+    .flow-block-active { background: #0e0e0e; }
+    .flow-block-active::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: #00969C;
+    }
+    .flow-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: #00969C;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .flow-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(232,232,232,0.85);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .flow-sub {
+      font-size: 12px;
+      color: rgba(232,232,232,0.35);
+      line-height: 1.6;
+    }
+    .flow-arrow {
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background: #111;
+      border: 1px solid rgba(232,232,232,0.10);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+    .flow-arrow svg {
+      width: 8px; height: 8px;
+      stroke: #00969C; fill: none;
+      stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+    }
+    @media (max-width: 680px) {
+      .flow-arrow { display: none; }
+    }
+
+    /* ── STAT ROW ─────────────────────────────────────────── */
+    .papers-stat-row {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      padding: 40px 0;
+      border-top: 1px solid rgba(232,232,232,0.08);
+      border-bottom: 1px solid rgba(232,232,232,0.08);
+      margin-bottom: 16px;
+    }
+    .papers-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .papers-stat-n {
+      font-family: var(--font-mono);
+      font-size: 28px;
+      font-weight: 700;
+      color: rgba(232,232,232,0.90);
+      letter-spacing: -0.02em;
+    }
+    .papers-stat-n span { color: #00969C; }
+    .papers-stat-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: rgba(232,232,232,0.35);
+      text-transform: uppercase;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="logo" href="index.html">
+      <img src="images/enhance-logo-w.png" alt="ENHANCE Institute" />
+    </a>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pathfinder.html">PathFinder-GOV™</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="papers.html" class="active">Papers</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+
+    <!-- HERO -->
+    <section style="padding: 80px 0 0;">
+      <div class="container">
+        <div class="section-label">SSRN · Working Paper Series</div>
+        <h1 class="section-title">The foundation<br />precedes the evidence.</h1>
+        <div class="divider"></div>
+        <p class="section-body">
+          ENHANCE Institute publishes its theoretical and methodological foundations on SSRN.
+          These papers are not summaries of reports — they are the architecture from which
+          the evaluation frameworks are derived.
+          The reports test what the papers establish.
+        </p>
+
+        <!-- STAT ROW -->
+        <div class="papers-stat-row fade-in">
+          <div class="papers-stat">
+            <div class="papers-stat-n">13</div>
+            <div class="papers-stat-label">Working Papers</div>
+          </div>
+          <div class="papers-stat">
+            <div class="papers-stat-n">Nov <span>'24</span></div>
+            <div class="papers-stat-label">First Published</div>
+          </div>
+          <div class="papers-stat">
+            <div class="papers-stat-n">5</div>
+            <div class="papers-stat-label">Theoretical Layers</div>
+          </div>
+          <div class="papers-stat">
+            <div class="papers-stat-n">1</div>
+            <div class="papers-stat-label">Structural Argument</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PAPERS BY LAYER -->
+    <section>
+      <div class="container">
+
+        <!-- ── LAYER 01 ── -->
+        <div class="layer-header fade-in">
+          <div>
+            <div class="layer-num">Layer 01 — Cause Diagnosis</div>
+            <div class="layer-desc">
+              Climate failure is not a behavioural problem. It is a structural one.
+              These papers establish why infrastructure — not intent — is the first climate variable.
+            </div>
+          </div>
+        </div>
+
+        <div class="papers-grid fade-in">
+
+          <a class="paper-card" href="https://ssrn.com/abstract=5702124" target="_blank" rel="noopener">
+            <div class="paper-date">November 2025</div>
+            <div class="paper-title">Carbon Behavior Is Not Human Nature: A Structural Theory of Emission and Infrastructure Parity</div>
+            <div class="paper-hook">Carbon emissions are not a moral failure. They are an infrastructure outcome. The theory of behaviour-change as climate strategy is structurally incomplete.</div>
+            <span class="paper-ssrn">
+              SSRN 5702124
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </a>
+
+          <a class="paper-card" href="https://ssrn.com/abstract=5882762" target="_blank" rel="noopener">
+            <div class="paper-date">December 2025</div>
+            <div class="paper-title">Scope 0: Infrastructure as the First Climate Variable</div>
+            <div class="paper-hook">A new accounting layer preceding Scope 1, 2, and 3. Infrastructure access determines whether emissions are structurally avoidable or unavoidable.</div>
+            <span class="paper-ssrn">
+              SSRN 5882762
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </a>
+
+        </div>
+
+
+        <!-- ── LAYER 02 ── -->
+        <div class="layer-header fade-in">
+          <div>
+            <div class="layer-num">Layer 02 — Theoretical Foundation</div>
+            <div class="layer-desc">
+              Structural logic governs outcome before implementation begins.
+              These papers formalise the deterministic relationship between design architecture and result.
+            </div>
+          </div>
+        </div>
+
+        <div class="papers-grid fade-in">
+
+          <a class="paper-card" href="https://ssrn.com/abstract=5964174" target="_blank" rel="noopener">
+            <div class="paper-date">December 2025</div>
+            <div class="paper-title">Meatball Theory: Why Transparent Policies Fail and Behavior-Aligned System Design Succeeds</div>
+            <div class="paper-hook">Human self-interest is not a flaw to be corrected. It is a design variable to be aligned. The behavioural premise underlying VERA-TCV™.</div>
+            <span class="paper-ssrn">
+              SSRN 5964174
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </a>
+
+          <a class="paper-card" href="https://ssrn.com/abstract=6115348" target="_blank" rel="noopener">
+            <div class="paper-date">January 2026</div>
+            <div class="paper-title">A Structural Determinism Framework for Verifying Climate Projects in an Era of Non-Linearity</div>
+            <div class="paper-hook">Non-linearity is not an excuse for unverifiability. A deterministic verification architecture for complex climate interventions.</div>
+            <span class="paper-ssrn">
+              SSRN 6115348
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </a>
+
+          <a class="paper-card paper-card-single" href="https://ssrn.com/abstract=6336418" target="_blank" rel="noopener">
+            <div class="paper-date">March 2026</div>
+            <div class="paper-title">Structural Determinism in Climate Project Architecture: A Set-Theoretic and Invertibility-Based Foundation</div>
+            <div class="paper-hook">P ⊆ Q. The mathematical formalisation of structural determinism. If the structural conditions for an outcome are not present in the design document, the outcome cannot be produced — regardless of intent, effort, or funding.</div>
+            <span class="paper-ssrn">
+              SSRN 6336418
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </a>
+
+        </div>
+
+
+        <!-- ── LAYER 03 ── -->
+        <div class="layer-header fade-in">
+          <div>
+            <div class="layer-num">Layer 03 — Financial Architecture</div>
+            <div class="layer-desc">
+              Structural theory translated into climate finance design.
+              How the logic of structural determinism reshapes how capital should be structured, priced, and verified.
+            </div>
+          </div>
+        </div>
+
+        <div class="papers-grid fade-in">
+
+          <a class="paper-card" href="https://ssrn.com/abstract=5711244" target="_blank" rel="noopener">
+            <div class="paper-date">November 2025</div>
+            <div class="paper-title">Toward Outcome-System Finance: Reframing Sustainable Finance Architecture</div>
+            <div class="paper-hook">Sustainable finance is structurally misaligned. The shift from ESG disclosure to outcome-system verification as the foundation of climate capital allocation.</div>
+            <span class="paper-ssrn">
+              SSRN 5711244
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </a>
+
+          <a class="paper-card" href="https://ssrn.com/abstract=5929275" target="_blank" rel="noopener">
+            <div class="paper-date">December 2025</div>
+            <div class="paper-title">Outcome-Based Insurance for Climate Infrastructure: Linking Mitigation Performance to Risk Pricing</div>
+            <div class="paper-hook">Insurance markets redesigned as performance-linked climate finance instruments. The Carbon-for-Premium (CFP) mechanism.</div>
+            <span class="paper-ssrn">
+              SSRN 5929275
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </a>
+
+          <a class="paper-card" href="https://ssrn.com/abstract=5882883" target="_blank" rel="noopener">
+            <div class="paper-date">December 2025</div>
+            <div class="paper-title">A Two Kernel Model for Climate Strategy: Mitigation as Closed Optimization and Adaptation as Stochastic Resilience</div>
+            <div class="paper-hook">Mitigation and adaptation are not parallel tracks. They are structurally distinct problems requiring structurally distinct financial architectures.</div>
+            <span class="paper-ssrn">
+              SSRN 5882883
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </a>
+
+          <a class="paper-card" href="https://ssrn.com/abstract=6335878" target="_blank" rel="noopener">
+            <div class="paper-date">March 2026</div>
+            <div class="paper-title">Market Moment Theory (MMT): A Structural Leverage Framework for Climate-Linked Financial Systems</div>
+            <div class="paper-hook">M = F × d. Financial leverage is not a function of capital volume. It is a function of structural moment — the alignment between force, distance, and deployment timing.</div>
+            <span class="paper-ssrn">
+              SSRN 6335878
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </a>
+
+        </div>
+
+
+        <!-- ── LAYER 04 ── -->
+        <div class="layer-header fade-in">
+          <div>
+            <div class="layer-num">Layer 04 — Mathematical Formalisation</div>
+            <div class="layer-desc">
+              The deterministic engines behind the evaluation frameworks.
+              Each paper establishes the quantitative architecture of one component of the VERA-TCV™ system.
+            </div>
+          </div>
+        </div>
+
+        <div class="papers-grid fade-in">
+
+          <a class="paper-card" href="https://ssrn.com/abstract=6492898" target="_blank" rel="noopener">
+            <div class="paper-date">March 2026</div>
+            <div class="paper-title">Returning the Land: Toward a Species-First Framework for Nature-Based Solutions Design</div>
+            <div class="paper-hook">NbS design fails when ecological logic is subordinated to financial logic. A species-first framework for structurally sound nature-based interventions — the foundation of GeoCarb™.</div>
+            <span class="paper-ssrn">
+              SSRN 6492898
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </a>
+
+          <a class="paper-card" href="https://ssrn.com/abstract=6568921" target="_blank" rel="noopener">
+            <div class="paper-date">April 2026</div>
+            <div class="paper-title">GeoCarb™: A Latitude-Based Carbon Absorption Model for Independent Pre-Verification of Nature-Based Solution Projects</div>
+            <div class="paper-hook">Species-specific Gaussian calibration across 7 vegetation types. R² ≥ 0.91. Independent carbon pre-verification for NbS projects — before capital is committed.</div>
+            <span class="paper-ssrn">
+              SSRN 6568921
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </a>
+
+        </div>
+
+
+        <!-- ── LAYER 05 ── -->
+        <div class="layer-header fade-in">
+          <div>
+            <div class="layer-num">Layer 05 — Empirical Validation</div>
+            <div class="layer-desc">
+              The frameworks, tested against the evidence.
+              Theory is necessary. It is not sufficient. These papers and reports close the argument with data.
+            </div>
+          </div>
+        </div>
+
+        <div class="papers-grid fade-in">
+
+          <a class="paper-card" href="https://ssrn.com/abstract=6546583" target="_blank" rel="noopener">
+            <div class="paper-date">April 2026</div>
+            <div class="paper-title">Structural Integrity Index for Climate Project Architectures: A Structural Benchmark Using ToC:f(x)™</div>
+            <div class="paper-hook">101 GGGI climate projects. 20 binary structural conditions. Zero projects at Tier I or Tier II. 90.1% below threshold. The first full-population structural benchmark in climate finance.</div>
+            <span class="paper-ssrn">
+              SSRN 6546583
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </a>
+
+          <a class="paper-card" href="https://ssrn.com/abstract=6602539" target="_blank" rel="noopener">
+            <div class="paper-date">April 2026</div>
+            <div class="paper-title">Resources, Time, and Structural Integrity: A Four-Layer Ex-Ante Verification Framework for Climate Finance — VERA-TCV™</div>
+            <div class="paper-hook">The methodological foundation for this report series. Four computationally independent models. Applied to five GCF projects. 86–100% directional consistency. The framework that the 15-project report extends.</div>
+            <span class="paper-ssrn">
+              SSRN 6602539
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ARCHITECTURE FLOW -->
+    <section class="alt" style="padding-top: 80px;">
+      <div class="container">
+        <div class="section-label">How It Connects</div>
+        <h2 class="section-title">One argument.<br />Four expressions.</h2>
+        <div class="divider"></div>
+        <p class="section-body">
+          The papers establish the theory. The frameworks implement it.
+          The reports test it against evidence. The services apply it before capital is committed.
+        </p>
+
+        <div class="flow-row fade-in">
+
+          <div class="flow-block flow-block-active" style="position: relative;">
+            <div class="flow-label">01</div>
+            <div class="flow-name">Papers</div>
+            <div class="flow-sub">The theoretical and mathematical architecture. SSRN working paper series.</div>
+            <div class="flow-arrow">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+          </div>
+
+          <a href="about.html" class="flow-block" style="position: relative;">
+            <div class="flow-label">02</div>
+            <div class="flow-name">Frameworks</div>
+            <div class="flow-sub">VERA™ · ToC:f(x)™ · C-FAIR™ · VORTA™. The deterministic engines.</div>
+            <div class="flow-arrow">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+          </a>
+
+          <a href="research.html" class="flow-block" style="position: relative;">
+            <div class="flow-label">03</div>
+            <div class="flow-name">Reports</div>
+            <div class="flow-sub">Benchmark evaluations and portfolio analyses. The empirical record.</div>
+            <div class="flow-arrow">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+          </a>
+
+          <a href="services.html" class="flow-block">
+            <div class="flow-label">04</div>
+            <div class="flow-name">Services</div>
+            <div class="flow-sub">Structural diagnosis and design. Applied before capital is committed.</div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CLOSING STATEMENT -->
+    <section>
+      <div class="container">
+        <div class="philosophy-block fade-in">
+          <blockquote>
+            "Structure does not emerge from outcomes.<br />
+            It precedes them."
+          </blockquote>
+          <cite>ENHANCE Institute — Working Paper Series, 2025–2026</cite>
+        </div>
+
+        <div style="margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="research.html" class="btn-primary" style="
+            display: inline-block;
+            background: #00969C; color: #fff;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px; letter-spacing: 0.08em;
+            text-transform: uppercase; text-decoration: none;
+            padding: 14px 28px; border-radius: 2px;
+          ">View Reports →</a>
+          <a href="pathfinder.html" class="btn-secondary" style="
+            display: inline-block;
+            border: 1px solid rgba(232,232,232,0.20);
+            color: rgba(232,232,232,0.70);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px; letter-spacing: 0.08em;
+            text-transform: uppercase; text-decoration: none;
+            padding: 14px 28px; border-radius: 2px;
+            transition: border-color 0.2s, color 0.2s;
+          "
+          onmouseover="this.style.borderColor='#00969C';this.style.color='#00969C'"
+          onmouseout="this.style.borderColor='rgba(232,232,232,0.20)';this.style.color='rgba(232,232,232,0.70)'">
+            PathFinder-GOV™ →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            <img src="images/enhance-logo-w.png" alt="ENHANCE" />
+          </div>
+          <div class="footer-tagline">Enhancing the Systems that sustain our world</div>
+        </div>
+        <div class="footer-orca">
+          <img src="images/orca-emblem.png" alt="ENHANCE ORCA" />
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 ENHANCE Institute. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="pathfinder.html">PathFinder-GOV™</a>
+          <a href="research.html">Research</a>
+          <a href="papers.html">Papers</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>

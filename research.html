@@ -105,7 +105,7 @@
 
         <!-- SII 2026 — PRIMARY REPORT -->
         <div class="report-card fade-in classified-wrapper">
-          <div class="classified-blur">
+          <div class="classified-blur" style="display: contents;">
             <div>
               <div class="report-tag">Benchmark Report · April 2026</div>
               <div class="report-title">
@@ -131,11 +131,11 @@
                 <span style="font-family: var(--font-mono); font-size: 11px; color: var(--gray-text);">46 pages</span>
               </div>
             </div>
-            <div class="report-action" id="sii-action">
-              <img src="images/cover-sii.jpg" alt="SII 2026 Report Cover"
-                style="width: 100%; max-width: 220px; display: block; margin-bottom: 16px;
-                box-shadow: 0 4px 24px rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.06);" />
-            </div>
+          </div>
+          <div class="report-action" id="sii-action">
+            <img src="images/cover-sii.jpg" alt="SII 2026 Report Cover"
+              style="width: 100%; max-width: 220px; display: block; margin-bottom: 16px;
+              box-shadow: 0 4px 24px rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.06);" />
           </div>
           <div class="classified-overlay">
             <div class="classified-rule"></div>
@@ -280,8 +280,12 @@
     if (now >= april7) {
       const siiCard = document.querySelector('.report-card.classified-wrapper');
       if (siiCard) {
-        siiCard.querySelector('.classified-blur').classList.remove('classified-blur');
-        siiCard.querySelector('.classified-overlay').remove();
+        const blurDiv = siiCard.querySelector('.classified-blur');
+        if (blurDiv) blurDiv.style.filter = 'none';
+        if (blurDiv) blurDiv.style.opacity = '1';
+        if (blurDiv) blurDiv.style.pointerEvents = 'auto';
+        const overlay = siiCard.querySelector('.classified-overlay');
+        if (overlay) overlay.remove();
         document.getElementById('sii-action').innerHTML =
           `<img src="images/cover-sii.jpg" alt="SII 2026 Report Cover"
             style="width: 100%; max-width: 220px; display: block; margin-bottom: 16px;

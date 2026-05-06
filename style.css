@@ -617,6 +617,7 @@ footer {
 
 @media (max-width: 900px) {
   nav { padding: 0 24px; }
+  nav .logo img { height: 20px; }
   .container { padding: 0 24px; }
   .hero-orca { width: 280px; height: 280px; right: -40px; bottom: -40px; }
   .stats-row { grid-template-columns: 1fr; }

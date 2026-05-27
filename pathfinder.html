@@ -711,7 +711,7 @@
 
         <div class="pricing-card featured">
           <span class="pricing-tag">Mission Access</span>
-          <div class="pricing-price">USD 1,500 — 3,000</div>
+          <div class="pricing-price">USD 1,500 <span>— 3,000</span></div>
           <div class="pricing-desc">For verified LDC/SIDS Focal Points and NDAs</div>
           <ul class="pricing-list">
             <li>Full structural position score</li>
@@ -727,7 +727,7 @@
 
         <div class="pricing-card">
           <span class="pricing-tag">Standard</span>
-          <div class="pricing-price">USD 3,000 — 5,000</div>
+          <div class="pricing-price">USD 3,000 <span>— 5,000</span></div>
           <div class="pricing-desc">For verified Focal Points without Mission Access eligibility</div>
           <ul class="pricing-list">
             <li>Full structural position score</li>
@@ -764,126 +764,53 @@
       <p class="section-body">
         The sample below shows the report structure, diagnostic categories,
         and interpretation style of PathFinder-GOV™.
-        Exact numerical scores, normalised values, and portfolio-reference data
-        are masked in this public version.
+        Some numerical fields have been redacted to protect ENHANCE's proprietary methodology.
         Actual client reports provide precise numerical values for all dimensions shown.
       </p>
 
-      <!-- 뷰어 컨테이너 -->
-      <div id="pf-viewer" style="
-        margin-top: 40px;
-        max-width: 820px;
-        max-height: 680px;
-        overflow-y: scroll;
-        border: 0.5px solid var(--border);
-        border-radius: 4px;
-        background: #1a1a1a;
-        position: relative;
-        scroll-behavior: smooth;
-      ">
-        <!-- 투명 오버레이 — 우클릭/드래그 방지 -->
-        <div id="pf-overlay" style="
-          position: absolute; inset: 0;
-          z-index: 10;
-          user-select: none;
-          -webkit-user-select: none;
-        "></div>
-
-        <!-- 페이지 이미지들 -->
-        <div id="pf-pages" style="padding: 16px; display: flex; flex-direction: column; gap: 12px;">
-          <img src="images/sample/page_01.webp" alt="PathFinder-GOV Sample Page 1" draggable="false"
-               style="width:100%; border-radius:2px; display:block; pointer-events:none;" />
-          <img src="images/sample/page_02.webp" alt="PathFinder-GOV Sample Page 2" draggable="false"
-               style="width:100%; border-radius:2px; display:block; pointer-events:none;" />
-          <img src="images/sample/page_03.webp" alt="PathFinder-GOV Sample Page 3" draggable="false"
-               style="width:100%; border-radius:2px; display:block; pointer-events:none;" />
-          <img src="images/sample/page_04.webp" alt="PathFinder-GOV Sample Page 4" draggable="false"
-               style="width:100%; border-radius:2px; display:block; pointer-events:none;" />
-          <img src="images/sample/page_05.webp" alt="PathFinder-GOV Sample Page 5" draggable="false"
-               style="width:100%; border-radius:2px; display:block; pointer-events:none;" />
-          <img src="images/sample/page_06.webp" alt="PathFinder-GOV Sample Page 6" draggable="false"
-               style="width:100%; border-radius:2px; display:block; pointer-events:none;" />
-        </div>
+      <!-- PDF 뷰어 -->
+      <div style="margin-top: 40px; max-width: 820px; position: relative;">
+        <iframe
+          src="pathfinder_sample.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
+          width="100%"
+          height="680"
+          style="
+            border: 0.5px solid var(--border);
+            border-radius: 4px;
+            display: block;
+            background: #1a1a1a;
+          "
+          title="PathFinder-GOV™ Public Sample Report"
+        >
+          <p style="font-family: var(--mono); font-size: 11px; color: var(--muted); padding: 24px;">
+            Your browser does not support inline PDF viewing.
+            <a href="pathfinder_sample.pdf" style="color: var(--teal);">Download the sample report</a> to view it.
+          </p>
+        </iframe>
       </div>
 
-      <!-- 페이지 네비게이션 -->
-      <div style="margin-top: 16px; display: flex; align-items: center; gap: 12px; max-width: 820px;">
-        <button onclick="scrollPage(-1)" style="
-          background: var(--mid); border: 0.5px solid var(--border);
-          color: var(--text); font-family: var(--mono); font-size: 11px;
-          padding: 8px 16px; border-radius: 2px; cursor: pointer;
-          letter-spacing: 0.06em; text-transform: uppercase;
-          transition: border-color 0.2s;
-        " onmouseover="this.style.borderColor='var(--teal)'"
-           onmouseout="this.style.borderColor='var(--border)'">
-          ← Prev
-        </button>
-        <span id="page-indicator" style="
+      <!-- 다운로드 링크 -->
+      <div style="margin-top: 16px; max-width: 820px; display: flex; align-items: center; justify-content: space-between;">
+        <p style="font-family: var(--mono); font-size: 10px; color: var(--muted); line-height: 1.7; margin: 0;">
+          Public Demonstration Sample — Not a client output.
+          Some fields redacted. Full outputs provided to verified clients only.
+        </p>
+        <a href="pathfinder_sample.pdf" download style="
           font-family: var(--mono); font-size: 11px;
-          color: var(--muted); flex: 1; text-align: center;
-        ">Page 1 of 6</span>
-        <button onclick="scrollPage(1)" style="
-          background: var(--mid); border: 0.5px solid var(--border);
-          color: var(--text); font-family: var(--mono); font-size: 11px;
-          padding: 8px 16px; border-radius: 2px; cursor: pointer;
+          color: var(--teal); text-decoration: none;
+          border: 0.5px solid var(--teal);
+          padding: 8px 16px; border-radius: 2px;
           letter-spacing: 0.06em; text-transform: uppercase;
-          transition: border-color 0.2s;
-        " onmouseover="this.style.borderColor='var(--teal)'"
-           onmouseout="this.style.borderColor='var(--border)'">
-          Next →
-        </button>
+          white-space: nowrap; margin-left: 24px;
+          transition: background 0.2s;
+        "
+        onmouseover="this.style.background='rgba(0,150,156,0.08)'"
+        onmouseout="this.style.background='transparent'">
+          ↓ Download Sample
+        </a>
       </div>
-
-      <p style="margin-top: 16px; font-family: var(--mono); font-size: 10px;
-                color: var(--muted); max-width: 820px; line-height: 1.7;">
-        Public Demonstration Sample — Not a client output.
-        This report uses illustrative signal labels only.
-        Client-specific PathFinder-GOV™ outputs are confidential and not for public disclosure.
-      </p>
     </div>
   </section>
-
-  <script>
-    // ── 우클릭 방지 ──────────────────────────────────────────────────────
-    document.getElementById('pf-viewer').addEventListener('contextmenu', e => {
-      e.preventDefault(); return false;
-    });
-    document.getElementById('pf-overlay').addEventListener('contextmenu', e => {
-      e.preventDefault(); return false;
-    });
-
-    // ── 페이지 네비게이션 ────────────────────────────────────────────────
-    const TOTAL_PAGES = 6;
-    let currentPage = 1;
-
-    function scrollPage(dir) {
-      const viewer = document.getElementById('pf-viewer');
-      const pages  = document.querySelectorAll('#pf-pages img');
-      currentPage  = Math.max(1, Math.min(TOTAL_PAGES, currentPage + dir));
-
-      const target = pages[currentPage - 1];
-      const offset = target.offsetTop - viewer.offsetTop - 16;
-      viewer.scrollTo({ top: offset, behavior: 'smooth' });
-
-      document.getElementById('page-indicator').textContent =
-        `Page ${currentPage} of ${TOTAL_PAGES}`;
-    }
-
-    // 스크롤 시 페이지 인디케이터 업데이트
-    document.getElementById('pf-viewer').addEventListener('scroll', function() {
-      const viewer = this;
-      const pages  = document.querySelectorAll('#pf-pages img');
-      let closest = 1;
-      let minDist = Infinity;
-      pages.forEach((img, i) => {
-        const dist = Math.abs(img.offsetTop - viewer.offsetTop - viewer.scrollTop - 16);
-        if (dist < minDist) { minDist = dist; closest = i + 1; }
-      });
-      currentPage = closest;
-      document.getElementById('page-indicator').textContent =
-        `Page ${currentPage} of ${TOTAL_PAGES}`;
-    });
-  </script>
 
   <!-- HOW TO APPLY -->
   <section style="padding: 80px 48px; background: var(--mid); border-top: 0.5px solid var(--border);">

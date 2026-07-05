@@ -3,275 +3,271 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ENHANCE Institute — Structural Integrity in Climate Finance</title>
-  <meta name="description" content="ENHANCE evaluates whether climate projects are structurally capable of producing the outcomes they claim." />
+  <title>ENHANCE Institute — Independent Structural Audit for Climate Finance</title>
+  <meta name="description" content="ENHANCE Institute is the independent structural audit function for climate finance. We examine whether climate-finance systems, projects, instruments, and claims are causally coherent, financially aligned, and structurally capable of achieving their stated purposes." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a class="logo" href="index.html">
-      <img src="images/enhance-logo-w.png" alt="ENHANCE Institute" />
-    </a>
-    <ul>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="pathfinder.html">PathFinder-GOV™</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="papers.html">Papers</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html" class="nav-cta">Contact</a></li>
-    </ul>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/enhance-logo-w.png" alt="ENHANCE Institute" />
+  </a>
+  <ul>
+    <li><a href="audit-reports.html">Audit Reports</a></li>
+    <li><a href="about.html">About ENHANCE</a></li>
+    <li><a href="methodology.html">Methodological Architecture</a></li>
+    <li><a href="research.html">Research &amp; Papers</a></li>
+    <li><a href="contact.html" class="nav-contact">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-  <div class="nav-mobile-overlay" id="nav-mobile-overlay">
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="pathfinder.html">PathFinder-GOV™</a>
-    <a href="research.html">Research</a>
-    <a href="papers.html">Papers</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html" class="nav-cta">Contact</a>
-  </div>
+<div class="nav-mobile-overlay" id="navMobile">
+  <a href="audit-reports.html">Audit Reports</a>
+  <a href="about.html">About ENHANCE</a>
+  <a href="methodology.html">Methodological Architecture</a>
+  <a href="research.html">Research &amp; Papers</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="page">
 
   <!-- HERO -->
-  <div class="page">
-    <section class="hero">
-      <div class="hero-grid"></div>
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-eyebrow">ENHANCE Institute</div>
-          <h1>Structural Integrity<br /><em>Matters.</em></h1>
-          <p class="hero-sub">
-            We evaluate whether climate projects are structurally capable
-            of producing the outcomes they claim.
-            Not what was reported. Whether the architecture holds.
-          </p>
-          <div class="hero-actions">
-            <a href="research.html" class="btn-primary">View Research</a>
-            <a href="services.html" class="btn-secondary">Our Services</a>
-          </div>
-
-          <!-- FOCAL POINT BANNER -->
-          <div style="
-            margin-top: 48px;
-            padding: 16px 24px;
-            border: 0.5px solid rgba(0,150,156,0.30);
-            border-left: 2px solid #00969C;
-            border-radius: 2px;
-            background: rgba(0,150,156,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-            flex-wrap: wrap;
-            max-width: 560px;
-          ">
-            <div>
-              <div style="
-                font-family: 'IBM Plex Mono', monospace;
-                font-size: 10px;
-                letter-spacing: 0.12em;
-                text-transform: uppercase;
-                color: #00969C;
-                margin-bottom: 4px;
-              ">For National Designated Authorities</div>
-              <div style="
-                font-size: 13px;
-                color: rgba(232,232,232,0.75);
-                line-height: 1.5;
-              ">Are you a GCF Focal Point? PathFinder-GOV™ is built for you.</div>
-            </div>
-            <a href="pathfinder.html" style="
-              display: inline-block;
-              border: 0.5px solid #00969C;
-              color: #00969C;
-              font-family: 'IBM Plex Mono', monospace;
-              font-size: 11px;
-              letter-spacing: 0.08em;
-              text-transform: uppercase;
-              text-decoration: none;
-              padding: 8px 18px;
-              border-radius: 2px;
-              white-space: nowrap;
-              transition: background 0.2s, color 0.2s;
-            " onmouseover="this.style.background='#00969C';this.style.color='#fff'"
-               onmouseout="this.style.background='transparent';this.style.color='#00969C'">
-              Learn More →
-            </a>
-          </div>
-        </div>
-      </div>
-      <img class="hero-orca" src="images/orca-emblem.png" alt="" />
-    </section>
-
-    <!-- STATS -->
-    <section style="padding: 0 0 100px;">
-      <div class="container">
-        <div class="stats-row fade-in">
-          <div class="stat-block">
-            <div class="stat-number">116<span>+</span></div>
-            <div class="stat-label">Climate Projects Evaluated</div>
-          </div>
-          <div class="stat-block">
-            <div class="stat-number"><span>92</span>%</div>
-            <div class="stat-label">Structural Consistency Rate</div>
-          </div>
-          <div class="stat-block">
-            <div class="stat-number">15</div>
-            <div class="stat-label">VERA-TCV™ × APR Validated</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRINCIPLES -->
-    <section class="alt">
-      <div class="container">
-        <div class="section-label">What We Do</div>
-        <h2 class="section-title">A prior question.<br />A structural one.</h2>
-        <div class="divider"></div>
-        <p class="section-body">
-          Conventional evaluation asks: what did this project achieve?
-          ENHANCE asks the question that comes before that — was the documented
-          project architecture structurally capable of producing what it claimed?
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content fade-in">
+        <div class="hero-institution">ENHANCE Institute · Est. 2024</div>
+        <h1>Independent Structural Audit<br />for Climate Finance</h1>
+        <p class="hero-declaration">
+          We examine documented structures, not intentions.<br />
+          <strong>We audit structures. Not narratives.</strong>
         </p>
-
-        <div class="principles fade-in">
-          <div class="principle accent">
-            <div class="principle-num">01</div>
-            <h3>Structural Diagnosis</h3>
-            <p>We evaluate the causal architecture of climate project design using deterministic, rule-based frameworks. No narrative. No discretion. Reproducible logic.</p>
-          </div>
-          <div class="principle">
-            <div class="principle-num">02</div>
-            <h3>Structural Design</h3>
-            <p>We redesign projects at the causal level — from input to impact — to ensure the architecture is internally coherent, scalable, and verifiable before capital is deployed.</p>
-          </div>
-          <div class="principle">
-            <div class="principle-num">03</div>
-            <h3>Independent Verification</h3>
-            <p>We operate without a stake in project outcomes. That independence is the foundation of our analytical authority.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PATHFINDER-GOV -->
-    <section>
-      <div class="container">
-        <div class="section-label">Diagnostic Intelligence</div>
-        <h2 class="section-title">PathFinder-GOV™</h2>
-        <div class="divider"></div>
-        <p class="section-body">
-          A structural pre-screening system for GCF project pipelines.
-          Exclusively available to National Designated Authorities and Focal Points
-          of LDC/SIDS nations. Know where your pipeline stands — before submission.
-        </p>
-
-        <div class="principles fade-in" style="margin-top: 40px;">
-          <div class="principle" style="border-left: 2px solid #00969C; padding-left: 24px;">
-            <div class="principle-num" style="color: #00969C;">01</div>
-            <h3>Where You Stand</h3>
-            <p>Your pipeline is positioned against 303 approved GCF projects via a standardised Z-score — so you know your structural standing before the Board sees it.</p>
-          </div>
-          <div class="principle" style="border-left: 2px solid rgba(0,150,156,0.3); padding-left: 24px;">
-            <div class="principle-num" style="color: #00969C;">02</div>
-            <h3>What Others Have Built</h3>
-            <p>Peer portfolio patterns from comparable LDC/SIDS nations show what has been designed, submitted, and approved — giving your pipeline a data-grounded reference point.</p>
-          </div>
-          <div class="principle" style="border-left: 2px solid rgba(0,150,156,0.3); padding-left: 24px;">
-            <div class="principle-num" style="color: #00969C;">03</div>
-            <h3>What to Fix First</h3>
-            <p>Structural weaknesses are separated from documentation gaps. Country-level risk signals are flagged before they reach the design stage. Accessible to every NDA that needs it.</p>
-          </div>
-        </div>
-
-        <div style="margin-top: 40px;">
-          <a href="pathfinder.html" class="btn-primary" style="
-            display: inline-block;
-            background: #00969C; color: #fff;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 12px; letter-spacing: 0.08em;
-            text-transform: uppercase; text-decoration: none;
-            padding: 14px 28px; border-radius: 2px;
-          ">Learn More — PathFinder-GOV™</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAGLINE -->
-    <section>
-      <div class="container">
-        <div class="philosophy-block fade-in">
-          <blockquote>
-            "In climate systems, structure determines outcome.<br />
-            Everything else is noise."
-          </blockquote>
-          <cite>ENHANCE Institute — Structural Integrity Index 2026</cite>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div>
-          <div class="footer-logo"><img src="images/enhance-logo-w.png" alt="ENHANCE" /></div>
-          <div class="footer-tagline">Enhancing the Systems that sustain our world</div>
-        </div>
-        <div class="footer-orca"><img src="images/orca-emblem.png" alt="ENHANCE ORCA" /></div>
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-copy">© 2026 ENHANCE Institute. All rights reserved.</div>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="pathfinder.html">PathFinder-GOV™</a>
-          <a href="research.html">Research</a>
-          <a href="papers.html">Papers</a>
-          <a href="projects.html">Projects</a>
-          <a href="contact.html">Contact</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
+        <div class="hero-actions">
+          <a href="docs/ISAR-2026-001.pdf" class="btn-primary" target="_blank" rel="noopener">
+            Read ISAR-2026-001
+          </a>
+          <a href="docs/Declaration-Structural-Audit-Function.pdf" class="btn-secondary" target="_blank" rel="noopener">
+            Declaration of Audit Function
+          </a>
         </div>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-  </script>
+  <!-- SECTION 2: PUBLISHED REPORTS -->
+  <section class="alt">
+    <div class="container">
+      <div class="fade-in">
+        <div class="section-eyebrow">Audit Reports</div>
+        <h2 class="section-title">Published Reports</h2>
+        <p class="section-body">
+          Independent structural audit findings, published in full upon completion.
+        </p>
+      </div>
 
-  <script>
-    const hamburger = document.getElementById('nav-hamburger');
-    const overlay = document.getElementById('nav-mobile-overlay');
-    if (hamburger && overlay) {
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('open');
-        overlay.classList.toggle('open');
-        document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
-      });
-      overlay.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          hamburger.classList.remove('open');
-          overlay.classList.remove('open');
-          document.body.style.overflow = '';
-        });
-      });
-    }
-  </script>
+      <div class="reports-grid fade-in">
+
+        <!-- ISAR-2026-001 -->
+        <div class="report-card">
+          <div>
+            <div class="report-tag">ISAR-2026-001 · July 2026</div>
+            <div class="report-title">Concessionality Dilution at Scale</div>
+            <div class="report-meta">
+              352 GCF projects · 2015–2026 portfolio · Grant ratio analysis
+            </div>
+            <div class="report-signal">
+              Audit Signal: <span>Structural Grant Ratio Decline of −27.7 percentage points across portfolio</span>
+            </div>
+          </div>
+          <div class="report-action">
+            <a href="docs/ISAR-2026-001.pdf" class="btn-download" target="_blank" rel="noopener">
+              Download PDF
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="audit-notice fade-in">
+        <p>
+          ENHANCE conducts structural audits on a continuous basis.
+          Reports are published upon completion.
+          ENHANCE does not pre-announce audit subjects.
+        </p>
+      </div>
+
+      <div style="margin-top: 32px;">
+        <a href="audit-reports.html" class="btn-secondary">View All Reports →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: SCOPE & BOUNDARY -->
+  <section>
+    <div class="container">
+      <div class="fade-in">
+        <div class="section-eyebrow">Scope &amp; Boundary</div>
+        <h2 class="section-title">What Structural Audit Is — and Is Not</h2>
+        <p class="section-body">
+          Structural audit connects questions that are often distributed across
+          separate documents, teams, and stages of the project lifecycle.
+        </p>
+      </div>
+
+      <div class="scope-grid fade-in">
+        <div class="scope-col examines">
+          <div class="scope-col-header">What Structural Audit Examines</div>
+          <ul class="scope-list">
+            <li>Causal integrity of the theory of change</li>
+            <li>Financial instrument alignment with country conditions</li>
+            <li>Beneficiary reach and distribution pathways</li>
+            <li>Private capital activation assumptions</li>
+            <li>MRV systems and performance evidence</li>
+            <li>Climate claims and mitigation baselines</li>
+            <li>Institutional arrangements and conflict-of-interest structure</li>
+          </ul>
+        </div>
+        <div class="scope-col is-not">
+          <div class="scope-col-header">What Structural Audit Is Not</div>
+          <ul class="scope-list">
+            <li>Not a statutory audit or financial-statement audit</li>
+            <li>Not a legal opinion</li>
+            <li>Not an official evaluation by any assessed institution</li>
+            <li>Not a credit rating or investment recommendation</li>
+            <li>Not an assurance engagement under a recognised standard</li>
+            <li>Not a determination of intent or misconduct</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: PUBLIC RECORD -->
+  <section class="alt">
+    <div class="container">
+      <div class="fade-in">
+        <div class="section-eyebrow">Public Record</div>
+        <h2 class="section-title">Foundational Documents</h2>
+        <p class="section-body">
+          ENHANCE's institutional basis, independence commitments, and methodological
+          authority are publicly documented and available in full.
+        </p>
+      </div>
+
+      <div class="record-grid fade-in">
+
+        <div class="record-block">
+          <div class="record-type">Declaration</div>
+          <div class="record-name">Declaration of the Independent Structural Audit Function</div>
+          <div class="record-sub">
+            Establishes ENHANCE's mandate, definitions, independence principles,
+            and the structural audit layer it addresses.
+          </div>
+          <a href="docs/Declaration-Structural-Audit-Function.pdf" class="record-link" target="_blank" rel="noopener">
+            Read Full Document
+          </a>
+        </div>
+
+        <div class="record-block">
+          <div class="record-type">Position Statement</div>
+          <div class="record-name">Structural Audit Is Not Climate-Finance Skepticism</div>
+          <div class="record-sub">
+            ENHANCE's official position on the relationship between independent
+            scrutiny and support for effective climate finance.
+          </div>
+          <a href="docs/Official-Position-Statement.pdf" class="record-link" target="_blank" rel="noopener">
+            Read Full Document
+          </a>
+        </div>
+
+        <div class="record-block">
+          <div class="record-type">Founding Statement</div>
+          <div class="record-name">ENHANCE Founding Statement</div>
+          <div class="record-sub">
+            The institutional origin, purpose, and operating principles
+            of ENHANCE Institute.
+          </div>
+          <a href="docs/ENHANCE-Founding-Statement.pdf" class="record-link" target="_blank" rel="noopener">
+            Read Full Document
+          </a>
+        </div>
+
+        <div class="record-block">
+          <div class="record-type">Working Papers</div>
+          <div class="record-name">SSRN Working Papers (18+)</div>
+          <div class="record-sub">
+            Peer-reviewed and pre-publication research underlying
+            ENHANCE's analytical frameworks.
+          </div>
+          <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8820621" class="record-link" target="_blank" rel="noopener">
+            View on SSRN
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div><!-- /.page -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-identity">
+        <div class="footer-logo">
+          <img src="images/enhance-logo-w.png" alt="ENHANCE Institute" />
+        </div>
+        <div class="footer-slogan">We audit structures. Not narratives.</div>
+        <div class="footer-tagline">Independent Structural Audit for Climate Finance</div>
+      </div>
+      <nav class="footer-nav">
+        <a href="audit-reports.html">Audit Reports</a>
+        <a href="about.html">About ENHANCE</a>
+        <a href="methodology.html">Methodological Architecture</a>
+        <a href="research.html">Research &amp; Papers</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 ENHANCE Institute · BRN 689-88-03389 · All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Fade-in on scroll
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  // Mobile nav
+  const hamburger = document.getElementById('hamburger');
+  const navMobile = document.getElementById('navMobile');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navMobile.classList.toggle('open');
+    document.body.style.overflow = navMobile.classList.contains('open') ? 'hidden' : '';
+  });
+  navMobile.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navMobile.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+
 </body>
 </html>

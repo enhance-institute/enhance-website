@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Identity — ENHANCE Institute</title>
+  <meta name="description" content="ENHANCE Institute exists to strengthen climate-finance integrity by quantifying claims, verifying causal structure, and rendering structural findings that cannot be dismissed." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ── FIXED BACKGROUND ────────────────────────────────────── */
+
+    body {
+      background-color: #080808;
+      background-image: url('images/orca.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    /* Mobile fallback — iOS Safari does not support fixed attachment */
+    @supports (-webkit-overflow-scrolling: touch) {
+      body {
+        background-attachment: scroll;
+      }
+    }
+
+    /* ── HERO ────────────────────────────────────────────────── */
+
+    .id-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.52);
+    }
+
+    .id-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 32px;
+    }
+
+    .id-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .id-eyebrow::before,
+    .id-eyebrow::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--teal);
+    }
+
+    .id-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 6vw, 80px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin-bottom: 32px;
+    }
+
+    .id-hero-sub {
+      font-family: var(--font-serif);
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.02em;
+      margin-bottom: 64px;
+    }
+
+    .id-scroll {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      animation: id-pulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes id-pulse {
+      0%, 100% { opacity: 0.35; transform: translateY(0); }
+      50% { opacity: 0.7; transform: translateY(4px); }
+    }
+
+    /* ── CONTENT SECTIONS ────────────────────────────────────── */
+
+    .id-section {
+      background: rgba(8, 8, 8, 0.95);
+      padding: 96px 0;
+    }
+
+    .id-section.id-alt {
+      background: rgba(14, 14, 14, 0.97);
+    }
+
+    .id-section.id-transparent {
+      background: rgba(4, 4, 4, 0.82);
+    }
+
+    /* ── OPENING STATEMENT ───────────────────────────────────── */
+
+    .id-opening {
+      font-family: var(--font-serif);
+      font-size: clamp(18px, 2.2vw, 26px);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.65;
+      max-width: 800px;
+      margin-bottom: 48px;
+    }
+
+    .id-verdict {
+      border-left: 3px solid var(--teal);
+      padding-left: 32px;
+      margin-top: 40px;
+    }
+
+    .id-verdict p {
+      font-family: var(--font-serif);
+      font-size: clamp(15px, 1.6vw, 19px);
+      font-style: italic;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .id-verdict p:last-child { margin-bottom: 0; }
+
+    /* ── SECTION LABELS ──────────────────────────────────────── */
+
+    .id-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .id-label::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--teal);
+    }
+
+    /* ── BODY TEXT ───────────────────────────────────────────── */
+
+    .id-body {
+      font-size: 16px;
+      color: var(--gray-text);
+      line-height: 1.9;
+      max-width: 700px;
+      margin-bottom: 24px;
+    }
+
+    .id-body:last-child { margin-bottom: 0; }
+
+    /* ── HEADING ─────────────────────────────────────────────── */
+
+    .id-h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(26px, 3vw, 40px);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+    }
+
+    /* ── ENHANCE ACRONYM ─────────────────────────────────────── */
+
+    .id-acronym {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 48px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .id-acronym-row {
+      display: grid;
+      grid-template-columns: 48px 200px 1fr;
+      gap: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      align-items: center;
+    }
+
+    .id-acronym-row:last-child { border-bottom: none; }
+
+    .id-acronym-letter {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--teal);
+      text-align: center;
+      padding: 20px 0;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .id-acronym-word {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--white);
+      padding: 20px 24px;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .id-acronym-meaning {
+      font-size: 13px;
+      color: var(--gray-text);
+      line-height: 1.65;
+      padding: 20px 28px;
+    }
+
+    /* ── NOT LIST ────────────────────────────────────────────── */
+
+    .id-not-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin: 28px 0;
+    }
+
+    .id-not-item {
+      font-family: var(--font-serif);
+      font-size: clamp(14px, 1.5vw, 17px);
+      color: rgba(255,255,255,0.55);
+      line-height: 1.5;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .id-not-item::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      opacity: 0.5;
+    }
+
+    .id-not-final {
+      font-family: var(--font-serif);
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 600;
+      color: var(--white);
+      margin-top: 16px;
+    }
+
+    /* ── QUANTIFY VERIFY UNDENIABLE DISPLAY ──────────────────── */
+
+    .id-qvu {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin: 48px 0;
+    }
+
+    .id-qvu-item {
+      background: rgba(255,255,255,0.03);
+      border-left: 3px solid transparent;
+      padding: 32px 40px;
+      transition: border-color 0.3s;
+    }
+
+    .id-qvu-item:nth-child(1) { border-left-color: var(--teal); }
+    .id-qvu-item:nth-child(2) { border-left-color: rgba(0,196,180,0.5); }
+    .id-qvu-item:nth-child(3) { border-left-color: rgba(0,196,180,0.25); }
+
+    .id-qvu-word {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    .id-qvu-def {
+      font-family: var(--font-serif);
+      font-size: clamp(15px, 1.6vw, 18px);
+      color: var(--white);
+      font-weight: 600;
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .id-qvu-body {
+      font-size: 14px;
+      color: var(--gray-text);
+      line-height: 1.85;
+      max-width: 640px;
+    }
+
+    /* ── GRAVITY OF TRUTH ────────────────────────────────────── */
+
+    .id-gravity {
+      text-align: center;
+      padding: 80px 0;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .id-gravity-phrase {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 4vw, 56px);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 48px;
+    }
+
+    .id-gravity-truth {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 40px;
+    }
+
+    .id-gravity-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .id-gravity-line {
+      font-family: var(--font-serif);
+      font-size: clamp(14px, 1.5vw, 17px);
+      color: rgba(255,255,255,0.55);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .id-gravity-conclusion {
+      font-family: var(--font-serif);
+      font-size: clamp(15px, 1.6vw, 18px);
+      color: var(--white);
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+
+    .id-gravity-statement {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.4);
+      margin-top: 40px;
+    }
+
+    /* ── DOMAIN LIST ─────────────────────────────────────────── */
+
+    .id-domains {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.04);
+      margin-top: 40px;
+    }
+
+    .id-domain {
+      background: rgba(8,8,8,0.9);
+      padding: 20px 24px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .id-domain-dash {
+      color: var(--teal);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    .id-domain-text {
+      font-size: 13px;
+      color: var(--gray-text);
+      line-height: 1.65;
+    }
+
+    /* ── WHAT ENHANCE IS NOT ─────────────────────────────────── */
+
+    .id-is-not {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 32px 0;
+    }
+
+    .id-is-not-item {
+      font-family: var(--font-serif);
+      font-size: clamp(13px, 1.4vw, 16px);
+      color: rgba(255,255,255,0.4);
+      padding: 10px 20px;
+      border-left: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* ── PAIRED STATEMENTS ───────────────────────────────────── */
+
+    .id-pairs {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .id-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .id-pair-not {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      color: rgba(255,255,255,0.35);
+      padding: 20px 28px 20px 0;
+      border-right: 1px solid rgba(255,255,255,0.06);
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    .id-pair-is {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      color: var(--white);
+      padding: 20px 0 20px 28px;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    /* ── INSTITUTIONAL STANDARD ──────────────────────────────── */
+
+    .id-standard {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 40px;
+      padding: 40px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .id-standard-item {
+      font-family: var(--font-serif);
+      font-size: clamp(14px, 1.5vw, 17px);
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+      padding-left: 24px;
+      border-left: 1px solid rgba(0,196,180,0.2);
+    }
+
+    .id-standard-conclusion {
+      font-family: var(--font-serif);
+      font-size: clamp(15px, 1.6vw, 18px);
+      color: var(--white);
+      font-weight: 600;
+      line-height: 1.55;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* ── CLOSING ─────────────────────────────────────────────── */
+
+    .id-closing {
+      text-align: center;
+      padding: 80px 0 48px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .id-closing-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .id-closing-line {
+      font-family: var(--font-serif);
+      font-size: clamp(15px, 1.8vw, 21px);
+      color: var(--white);
+      line-height: 1.55;
+    }
+
+    .id-closing-note {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      color: rgba(255,255,255,0.4);
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    /* ── EMBLEM SEAL ─────────────────────────────────────────── */
+
+    .id-seal {
+      text-align: center;
+      padding: 80px 0 120px;
+    }
+
+    .id-seal img {
+      width: 260px;
+      height: 260px;
+      object-fit: contain;
+      opacity: 0.92;
+      margin-bottom: 32px;
+    }
+
+    .id-seal-words {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .id-seal-phrase {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+
+    @media (max-width: 768px) {
+      .id-acronym-row { grid-template-columns: 40px 140px 1fr; }
+      .id-domains { grid-template-columns: 1fr; }
+      .id-pair { grid-template-columns: 1fr; }
+      .id-pair-not { border-right: none; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .id-pair-is { padding: 16px 0; }
+      .id-qvu-item { padding: 24px 24px; }
+      .id-standard { padding: 28px 24px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="logo" href="index.html">
+      <img src="images/enhance-logo-w.png" alt="ENHANCE Institute" />
+    </a>
+    <ul>
+      <li><a href="identity.html" class="active">Identity</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pathfinder.html">PathFinder-GOV™</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="papers.html">Papers</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ① HERO — Orca photograph fills viewport -->
+  <div class="id-hero">
+    <div class="id-hero-content">
+      <div class="id-eyebrow">ENHANCE Institute</div>
+      <h1 class="id-hero-title">
+        Independent<br />
+        Structural Audit<br />
+        Authority
+      </h1>
+      <div class="id-hero-sub">The Gravity of Truth</div>
+      <div class="id-scroll">scroll ↓</div>
+    </div>
+  </div>
+
+  <!-- ② OPENING STATEMENT -->
+  <section class="id-section">
+    <div class="container">
+
+      <p class="id-opening">
+        ENHANCE Institute exists to strengthen climate-finance integrity
+        by quantifying claims, verifying causal structure, and rendering
+        structural findings that cannot be dismissed by narrative preference,
+        institutional reputation, or market convention.
+      </p>
+
+      <div class="id-verdict">
+        <p>We do not treat climate-finance claims as narratives to be accepted.</p>
+        <p>We treat them as structures to be tested.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ③ ENHANCE AS A VERB -->
+  <section class="id-section id-alt">
+    <div class="container">
+
+      <div class="id-label">ENHANCE as a Verb</div>
+      <h2 class="id-h2">Not a static noun.<br />A verb.</h2>
+
+      <p class="id-body">
+        ENHANCE means to strengthen, improve, intensify, and raise the integrity
+        of something already in motion. This matters because ENHANCE does not exist
+        to preserve the surface of existing climate-finance language. It exists to
+        strengthen the structural conditions under which climate finance, climate
+        projects, policy claims, and institutional decisions can become more credible,
+        more accountable, and more resistant to failure.
+      </p>
+
+      <p class="id-body" style="color: var(--white); font-family: var(--font-serif); font-size: 17px; font-weight: 500; margin-top: 12px;">
+        The name ENHANCE carries seven institutional commitments:
+      </p>
+
+      <div class="id-acronym">
+        <div class="id-acronym-row">
+          <div class="id-acronym-letter">E</div>
+          <div class="id-acronym-word">Earth</div>
+          <div class="id-acronym-meaning">The physical system we operate within and are accountable to.</div>
+        </div>
+        <div class="id-acronym-row">
+          <div class="id-acronym-letter">N</div>
+          <div class="id-acronym-word">Nature</div>
+          <div class="id-acronym-meaning">The ecological systems that sustain all human and institutional action.</div>
+        </div>
+        <div class="id-acronym-row">
+          <div class="id-acronym-letter">H</div>
+          <div class="id-acronym-word">Humanity</div>
+          <div class="id-acronym-meaning">The people — present and future — whose lives climate finance is meant to protect.</div>
+        </div>
+        <div class="id-acronym-row">
+          <div class="id-acronym-letter">A</div>
+          <div class="id-acronym-word">Alliance</div>
+          <div class="id-acronym-meaning">The coordinated institutional and political will that makes climate action possible.</div>
+        </div>
+        <div class="id-acronym-row">
+          <div class="id-acronym-letter">N</div>
+          <div class="id-acronym-word">Network</div>
+          <div class="id-acronym-meaning">The interconnected systems through which resources, knowledge, and trust flow.</div>
+        </div>
+        <div class="id-acronym-row">
+          <div class="id-acronym-letter">C</div>
+          <div class="id-acronym-word">Climate</div>
+          <div class="id-acronym-meaning">The defining condition of our time and the physical reality that structures every claim we assess.</div>
+        </div>
+        <div class="id-acronym-row">
+          <div class="id-acronym-letter">E</div>
+          <div class="id-acronym-word">Ethics</div>
+          <div class="id-acronym-meaning">The constraint that governs how ENHANCE operates — independent, non-partisan, structurally disciplined.</div>
+        </div>
+      </div>
+
+      <p class="id-body" style="margin-top: 36px; font-style: italic; color: rgba(255,255,255,0.5);">
+        ENHANCE strengthens Earth, Nature, and Humanity through Alliance and Network,
+        under the reality of Climate and the constraint of Ethics.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ④ WHAT WE DO -->
+  <section class="id-section">
+    <div class="container">
+
+      <div class="id-label">What We Do</div>
+      <h2 class="id-h2">Climate finance increasingly<br />depends on claims.</h2>
+
+      <div class="id-not-list" style="margin-top: 28px;">
+        <div class="id-not-item">Project claims.</div>
+        <div class="id-not-item">Policy claims.</div>
+        <div class="id-not-item">Carbon claims.</div>
+        <div class="id-not-item">Transition claims.</div>
+        <div class="id-not-item">Adaptation claims.</div>
+        <div class="id-not-item">Mitigation claims.</div>
+        <div class="id-not-item">Impact claims.</div>
+        <div class="id-not-item">Finance claims.</div>
+      </div>
+
+      <p class="id-body" style="margin-top: 36px; font-family: var(--font-serif); font-size: 18px; color: var(--white); font-weight: 500;">
+        But a claim is not yet a structure.
+      </p>
+
+      <div style="margin-top: 28px; display: flex; flex-direction: column; gap: 14px; max-width: 680px;">
+        <p class="id-body" style="margin-bottom: 0;">A climate project may carry a noble purpose and still fail structurally.</p>
+        <p class="id-body" style="margin-bottom: 0;">A policy may carry strong ambition and still remain causally open.</p>
+        <p class="id-body" style="margin-bottom: 0;">A carbon number may be reported and still remain physically or methodologically unsupported.</p>
+        <p class="id-body" style="margin-bottom: 0;">A financing instrument may be concessional and still fail to match the delivery environment.</p>
+        <p class="id-body" style="margin-bottom: 0;">A theory of change may be written and still not close.</p>
+      </div>
+
+      <p class="id-body" style="margin-top: 40px;">
+        ENHANCE Institute applies structural audit methodology to test whether
+        climate-finance claims are causally, financially, physically, and
+        institutionally supported before they are treated as credible outcomes.
+      </p>
+
+      <div style="margin-top: 36px; padding: 32px 36px; background: rgba(0,196,180,0.04); border-left: 3px solid var(--teal);">
+        <p style="font-family: var(--font-serif); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; font-style: normal;">Our work focuses on structural integrity.</p>
+        <div class="id-not-list" style="margin: 0;">
+          <div class="id-not-item">Not intention.</div>
+          <div class="id-not-item">Not reputation.</div>
+          <div class="id-not-item">Not label.</div>
+          <div class="id-not-item">Not narrative.</div>
+        </div>
+        <div class="id-not-final" style="margin-top: 16px; padding-left: 20px;">Structure.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ⑤ THE ORCA EMBLEM -->
+  <section class="id-section id-alt">
+    <div class="container">
+
+      <div class="id-label">The Orca Emblem</div>
+      <h2 class="id-h2">Intelligence. Alliance.<br />Disciplined power.</h2>
+
+      <p class="id-body">
+        The Orca emblem represents ENHANCE Institute's independent structural audit
+        authority. The Orca is not a symbol of aggression. It is a symbol of
+        intelligence, alliance, coordination, ecological authority, and disciplined power.
+      </p>
+
+      <p class="id-body">
+        In the natural world, the Orca occupies a position of exceptional intelligence
+        and systemic presence. It does not rely on chaos. It operates through
+        coordination, memory, timing, and structural understanding. A great white shark
+        is not subdued by force — it is turned over, structurally incapacitated,
+        by intelligence alone. The Orca does not destroy the ecosystem. It governs it.
+      </p>
+
+      <p class="id-body">
+        This is the institutional posture of ENHANCE.
+      </p>
+
+      <div class="id-pairs" style="margin-top: 36px;">
+        <div class="id-pair">
+          <div class="id-pair-not">ENHANCE does not attack.</div>
+          <div class="id-pair-is">ENHANCE quantifies.</div>
+        </div>
+        <div class="id-pair">
+          <div class="id-pair-not">ENHANCE does not speculate.</div>
+          <div class="id-pair-is">ENHANCE verifies.</div>
+        </div>
+        <div class="id-pair">
+          <div class="id-pair-not">ENHANCE does not rely on outrage.</div>
+          <div class="id-pair-is">ENHANCE renders structural truth.</div>
+        </div>
+        <div class="id-pair">
+          <div class="id-pair-not">ENHANCE does not defer to institutional size.</div>
+          <div class="id-pair-is">ENHANCE renders structural truth.</div>
+        </div>
+      </div>
+
+      <p class="id-body" style="margin-top: 36px; font-style: italic; color: rgba(255,255,255,0.5);">
+        The Orca is therefore the seal of institutional judgment.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ⑥ QUANTIFY · VERIFY · UNDENIABLE -->
+  <section class="id-section">
+    <div class="container">
+
+      <div class="id-label">The Audit Sequence</div>
+      <h2 class="id-h2">QUANTIFY · VERIFY · UNDENIABLE</h2>
+      <div style="width: 40px; height: 2px; background: var(--teal); margin-bottom: 40px;"></div>
+
+      <div class="id-qvu">
+
+        <div class="id-qvu-item">
+          <div class="id-qvu-word">QUANTIFY</div>
+          <div class="id-qvu-def">To make a claim structurally visible.</div>
+          <div class="id-qvu-body">
+            ENHANCE decomposes climate-finance claims into their underlying architecture:
+            problem definition, causal pathway, intervention logic, financing structure,
+            delivery environment, monitoring boundary, outcome claim, and impact assertion.
+            A claim that remains narrative cannot be audited. A claim must first be made visible.
+          </div>
+        </div>
+
+        <div class="id-qvu-item">
+          <div class="id-qvu-word">VERIFY</div>
+          <div class="id-qvu-def">To test whether the structure can support the claim.</div>
+          <div class="id-qvu-body">
+            ENHANCE does not accept a claim because it is well-written, institutionally endorsed,
+            policy-aligned, or supported by formal disclosure. Verification asks: does the
+            intervention reach the stated problem? Does the theory of change close? Does the
+            claimed outcome depend on unstated assumptions? Verification is the point at which
+            narrative must submit to structure.
+          </div>
+        </div>
+
+        <div class="id-qvu-item">
+          <div class="id-qvu-word">UNDENIABLE</div>
+          <div class="id-qvu-def">Truth that cannot be dismissed by rhetoric or reputation.</div>
+          <div class="id-qvu-body">
+            Undeniable does not mean infallible. It means that once a claim has been quantified
+            and verified, the remaining structural finding cannot be dismissed merely by rhetoric,
+            reputation, or institutional preference. A structural gap becomes visible. A causal
+            failure point becomes identifiable. Truth becomes undeniable when structure is made visible.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ⑦ THE GRAVITY OF TRUTH -->
+  <section class="id-section id-transparent">
+    <div class="container">
+      <div class="id-gravity">
+
+        <div class="id-gravity-truth">— The Gravity of Truth —</div>
+
+        <div class="id-gravity-phrase">
+          Truth does not<br />negotiate.
+        </div>
+
+        <div class="id-gravity-lines">
+          <div class="id-gravity-line">Truth does not persuade like marketing.</div>
+          <div class="id-gravity-line">Truth does not negotiate like politics.</div>
+          <div class="id-gravity-line">Truth does not flatter like disclosure.</div>
+          <div class="id-gravity-line">Truth does not move because a powerful institution prefers another conclusion.</div>
+        </div>
+
+        <p class="id-gravity-conclusion">
+          Truth has gravity. A polished narrative may rise for a time.
+          A rating may comfort the market. A project may receive approval.
+          But if the structure is not closed, truth eventually pulls the
+          claim back toward reality.
+        </p>
+
+        <p class="id-gravity-conclusion" style="color: rgba(255,255,255,0.7);">
+          The role of ENHANCE Institute is to accelerate that gravitational
+          process — before capital, policy, institutional trust, or public
+          legitimacy is committed to unsupported claims.
+        </p>
+
+        <div class="id-gravity-statement">
+          The Gravity of Truth is not a slogan.<br />
+          It is the institutional physics of ENHANCE.
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑧ STRUCTURAL AUDIT DOMAINS -->
+  <section class="id-section id-alt">
+    <div class="container">
+
+      <div class="id-label">Structural Audit Domains</div>
+      <h2 class="id-h2">Is the claim<br />structurally supported?</h2>
+
+      <p class="id-body">
+        ENHANCE Institute develops and applies structural audit frameworks across
+        climate-finance environments. Our work is designed to answer one central question.
+      </p>
+
+      <div class="id-domains">
+        <div class="id-domain"><span class="id-domain-dash">—</span><span class="id-domain-text">Climate project architecture</span></div>
+        <div class="id-domain"><span class="id-domain-dash">—</span><span class="id-domain-text">Theory-of-change integrity</span></div>
+        <div class="id-domain"><span class="id-domain-dash">—</span><span class="id-domain-text">Climate-finance allocation structure</span></div>
+        <div class="id-domain"><span class="id-domain-dash">—</span><span class="id-domain-text">Concessionality and instrument suitability</span></div>
+        <div class="id-domain"><span class="id-domain-dash">—</span><span class="id-domain-text">Adaptation and mitigation claim structure</span></div>
+        <div class="id-domain"><span class="id-domain-dash">—</span><span class="id-domain-text">Carbon claim plausibility</span></div>
+        <div class="id-domain"><span class="id-domain-dash">—</span><span class="id-domain-text">Policy architecture assessment</span></div>
+        <div class="id-domain"><span class="id-domain-dash">—</span><span class="id-domain-text">Transition-finance design</span></div>
+        <div class="id-domain"><span class="id-domain-dash">—</span><span class="id-domain-text">Public climate-finance portfolio integrity</span></div>
+        <div class="id-domain"><span class="id-domain-dash">—</span><span class="id-domain-text">Greenwashing and structural misalignment detection</span></div>
+        <div class="id-domain"><span class="id-domain-dash">—</span><span class="id-domain-text">Ex-ante verification of climate project design</span></div>
+        <div class="id-domain"><span class="id-domain-dash">—</span><span class="id-domain-text">Corporate climate-financial exposure assessment</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ⑨ WHAT ENHANCE IS NOT -->
+  <section class="id-section">
+    <div class="container">
+
+      <div class="id-label">Institutional Boundaries</div>
+      <h2 class="id-h2">What ENHANCE<br />is not.</h2>
+
+      <p class="id-body">
+        ENHANCE Institute is not a political campaign.
+      </p>
+
+      <div class="id-is-not">
+        <div class="id-is-not-item">It is not an ESG rating agency.</div>
+        <div class="id-is-not-item">It is not a credit rating agency.</div>
+        <div class="id-is-not-item">It is not a project developer.</div>
+        <div class="id-is-not-item">It is not a carbon-credit issuer.</div>
+        <div class="id-is-not-item">It is not a certification body for emissions outcomes.</div>
+        <div class="id-is-not-item">It is not an investment adviser.</div>
+        <div class="id-is-not-item">It is not a public relations platform.</div>
+      </div>
+
+      <div style="margin-top: 36px; padding: 28px 32px; background: rgba(0,196,180,0.04); border-left: 3px solid var(--teal);">
+        <p style="font-size: 16px; color: var(--white); font-family: var(--font-serif); line-height: 1.7; margin-bottom: 12px;">
+          ENHANCE Institute provides independent structural audit and methodological assessment.
+        </p>
+        <p style="font-size: 14px; color: var(--gray-text); font-style: italic; line-height: 1.7; margin: 0;">
+          Our findings are not judgments of moral intention.<br />
+          They are assessments of structural integrity.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ⑩ INSTITUTIONAL STANDARD -->
+  <section class="id-section id-alt">
+    <div class="container">
+
+      <div class="id-label">Institutional Standard</div>
+      <h2 class="id-h2">One simple<br />standard.</h2>
+
+      <div class="id-standard">
+        <div class="id-standard-item">A climate-finance claim should not be accepted merely because it is ambitious.</div>
+        <div class="id-standard-item">It should not be accepted merely because it is aligned with policy language.</div>
+        <div class="id-standard-item">It should not be accepted merely because it is institutionally endorsed.</div>
+        <div class="id-standard-item">It should not be accepted merely because it is measurable after the fact.</div>
+        <div class="id-standard-conclusion">
+          It should be structurally testable before it is financed, approved, rewarded,
+          or treated as credible. That is the purpose of structural audit.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ⑪ THE ORCA AND ENHANCE INSTITUTE -->
+  <section class="id-section">
+    <div class="container">
+
+      <div class="id-label">The Orca and ENHANCE Institute</div>
+      <h2 class="id-h2">Intelligence without noise.<br />Authority without brutality.</h2>
+
+      <div class="id-pairs" style="margin-top: 40px;">
+        <div class="id-pair">
+          <div class="id-pair-not">Intelligence without noise.</div>
+          <div class="id-pair-is">Authority without brutality.</div>
+        </div>
+        <div class="id-pair">
+          <div class="id-pair-not">Judgment without accusation.</div>
+          <div class="id-pair-is">Power without recklessness.</div>
+        </div>
+        <div class="id-pair">
+          <div class="id-pair-not">Verification without deference.</div>
+          <div class="id-pair-is">Structure without noise.</div>
+        </div>
+      </div>
+
+      <p class="id-body" style="margin-top: 40px;">
+        It embodies the principle that unsupported claims do not need to be
+        attacked personally. They need to be turned over structurally.
+        Once the structure is visible, the truth has weight.
+        That weight is ENHANCE's institutional force.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ⑫ CLOSING STATEMENT -->
+  <section class="id-section id-alt">
+    <div class="container">
+      <div class="id-closing">
+
+        <div class="id-label" style="justify-content: center;">Closing Statement</div>
+
+        <div class="id-closing-lines" style="margin-top: 32px;">
+          <div class="id-closing-line">We quantify what others narrate.</div>
+          <div class="id-closing-line">We verify what others assume.</div>
+          <div class="id-closing-line">We render visible what others leave structurally unresolved.</div>
+        </div>
+
+        <div style="width: 40px; height: 1px; background: var(--teal); margin: 32px auto;"></div>
+
+        <p class="id-closing-note">
+          This is not a matter of style.<br />
+          It is a matter of survival, trust, and institutional responsibility<br />
+          in the climate-finance system.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑬ EMBLEM SEAL — Final -->
+  <section class="id-section id-transparent">
+    <div class="id-seal">
+      <img src="images/orca-emblem.png" alt="ENHANCE Institute — QUANTIFY · VERIFY · UNDENIABLE" />
+      <div class="id-seal-words">QUANTIFY · VERIFY · UNDENIABLE</div>
+      <div class="id-seal-phrase">The Gravity of Truth</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo"><img src="images/enhance-logo-w.png" alt="ENHANCE" /></div>
+          <div class="footer-tagline">Enhancing the Systems that sustain our world</div>
+        </div>
+        <div class="footer-orca"><img src="images/orca-emblem.png" alt="ENHANCE ORCA" /></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 ENHANCE Institute. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="identity.html">Identity</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="pathfinder.html">PathFinder-GOV™</a>
+          <a href="research.html">Research</a>
+          <a href="papers.html">Papers</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
